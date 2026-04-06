@@ -960,13 +960,39 @@
 
         .fade-in-up {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+            will-change: opacity, transform;
         }
 
         .fade-in-up.visible {
             opacity: 1;
             transform: translateY(0);
+            animation: fadeInUp 0.7s ease both;
+        }
+
+        .reveal-words {
+            position: relative;
+        }
+
+        .reveal-words .word {
+            opacity: 0;
+            transform: translateY(14px);
+            display: inline-block;
+            will-change: opacity, transform;
+            animation: wordReveal 0.6s ease forwards;
+        }
+
+        .reveal-words.visible .word {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes wordReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Tech Stack */
@@ -1451,11 +1477,7 @@
             <div class="nav-links" id="primary-navigation">
                 <a href="#inicio">Home</a>
                 <a href="#ao-vivo">Atendimento ao Vivo</a>
-                <a href="#solucao">Solução</a>
                 <a href="#como-funciona">Como Funciona</a>
-                <a href="#lgpd">LGPD</a>
-                <a href="#beneficios">Benefícios</a>
-                <a href="#para-prefeituras">Para Prefeituras</a>
                 <a href="/blog">Blog</a>
                 <a href="#contato" class="btn-demo">Contato</a>
             </div>
@@ -1865,7 +1887,7 @@
     <!-- LGPD -->
     <section class="tech-stack" id="lgpd">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in-up">
                 <div class="section-tag">● LGPD</div>
                 <h2 class="section-title">Adequação à LGPD para o setor público</h2>
                 <p class="section-description" style="color: rgba(255,255,255,0.8);">
@@ -1981,7 +2003,7 @@
 
     <!-- CTA Section -->
     <section class="cta-section" id="contato">
-        <div class="cta-content">
+        <div class="cta-content fade-in-up">
             <h2>Vamos transformar o atendimento<br>da sua prefeitura</h2>
             <p>Solicite uma demonstração e receba um diagnóstico gratuito com um especialista do SIGFILA.</p>
             <form class="cta-form" onsubmit="return handleSubmit(event)">
@@ -2069,6 +2091,95 @@
                 }
             });
         }, observerOptions);
+
+        const staggerContainers = document.querySelectorAll(
+            '.live-grid, .features-grid, .steps-grid, .tech-grid, .comparison-grid, .results-grid'
+        );
+
+        staggerContainers.forEach(container => {
+            const items = container.querySelectorAll('.fade-in-up');
+            items.forEach((item, index) => {
+                item.style.transitionDelay = `${index * 0.08}s`;
+                item.style.animationDelay = `${index * 0.08}s`;
+            });
+        });
+
+        const revealTargets = document.querySelectorAll(
+            '.hero h1, .hero-description, .hero-seo, .section-title, .section-description, .live-title'
+        );
+
+        revealTargets.forEach(el => {
+            el.classList.add('reveal-words');
+        });
+
+        const applyWordReveal = (el) => {
+            if (el.dataset.revealApplied === 'true') {
+                return;
+            }
+
+            const fragment = document.createDocumentFragment();
+            const nodes = Array.from(el.childNodes);
+
+            nodes.forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    const parts = node.textContent.split(/(\s+)/);
+                    parts.forEach(part => {
+                        if (part.trim() === '') {
+                            fragment.appendChild(document.createTextNode(part));
+                        } else {
+                            const span = document.createElement('span');
+                            span.className = 'word';
+                            span.textContent = part;
+                            fragment.appendChild(span);
+                        }
+                    });
+                } else if (node.nodeType === Node.ELEMENT_NODE) {
+                    node.classList.add('word');
+                    fragment.appendChild(node);
+                } else {
+                    fragment.appendChild(node);
+                }
+            });
+
+            el.textContent = '';
+            el.appendChild(fragment);
+
+            const words = el.querySelectorAll('.word');
+            words.forEach((word, index) => {
+                word.style.animationDelay = `${index * 0.06}s`;
+            });
+
+            el.dataset.revealApplied = 'true';
+        };
+
+        document.querySelectorAll('.reveal-words').forEach(el => applyWordReveal(el));
+
+        const isInViewport = (el) => {
+            const rect = el.getBoundingClientRect();
+            return rect.top < (window.innerHeight - 40) && rect.bottom > 0;
+        };
+
+        const animateInitial = () => {
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                if (isInViewport(el)) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        const forceReveal = () => {
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                el.classList.add('visible');
+            });
+        };
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(animateInitial);
+        });
+
+        if (window.location.protocol === 'file:') {
+            setTimeout(forceReveal, 200);
+        }
 
         document.querySelectorAll('.fade-in-up').forEach(el => {
             observer.observe(el);
@@ -2195,4 +2306,11 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
 
