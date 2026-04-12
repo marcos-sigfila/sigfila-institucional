@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como reduzir filas — SIGFILA</title>
-    <meta name="description" content="Guia prático para reduzir filas e distribuir a demanda no atendimento público.">
+    <title>Como Funciona o SIGFILA | Fluxo de Atendimento Público</title>
+    <meta name="description" content="Veja como funciona o SIGFILA: do totem ao painel do gestor, com acompanhamento remoto e dados em tempo real.">
+    <link rel="canonical" href="https://sigfila.com.br/como-funciona/">
     <link rel="icon" type="image/x-icon" href="/sigfila.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -495,7 +495,7 @@
         }
 
         .live-benefits li::before {
-            content: '✓';
+            content: 'âœ“';
             color: var(--green);
             font-weight: 700;
         }
@@ -731,7 +731,7 @@
         }
 
         .comparison-list li::before {
-            content: '•';
+            content: 'â€¢';
             color: var(--cyan);
             margin-right: 0.5rem;
         }
@@ -1090,7 +1090,7 @@
         }
 
         .case-features li::before {
-            content: '✓';
+            content: 'âœ“';
             color: var(--green);
             font-weight: bold;
             font-size: 1.1rem;
@@ -1438,12 +1438,12 @@
                 scroll-behavior: auto !important;
             }
         }
-    
     </style>
 </head>
 <body id="top">
-<header>
-    <nav>
+    <!-- Header -->
+    <header>
+        <nav>
     <a href="/" class="logo-container" aria-label="Voltar para a página inicial">
         <img src="/logo.png" alt="SIGFILA Logo" class="logo-mark" width="250" height="58">
     </a>
@@ -1453,194 +1453,225 @@
     <div class="nav-links" id="primary-navigation">
         <a href="/">Início</a>
         <a href="/solucao/">Solução</a>
-        <a href="/como-funciona/">Como Funciona</a>
+        <a href="/como-funciona/" class="active">Como Funciona</a>
         <a href="/lgpd/">LGPD</a>
         <a href="/transparencia/">Transparência</a>
-        <a href="/blog/" class="active">Blog</a>
+        <a href="/blog/">Blog</a>
         <a href="/contato/" class="btn-demo">Contato</a>
     </div>
 </nav>
-</header>
-<main>
+    </header>
+
+    <main>
     <section class="hero" id="inicio">
         <div class="hero-content">
             <div class="badge">
                 <span class="badge-dot"></span>
-                <span>Guia prático • Atendimento público</span>
+                <span>Como funciona • Fluxo SIGFILA</span>
             </div>
-            <h1>Como <span class="gradient-text">reduzir filas</span> no atendimento público</h1>
+            <h1>O caminho completo do cidadão ao <span class="gradient-text">painel do gestor</span></h1>
             <p class="hero-description">
-                Estratégias para distribuir a demanda ao longo do dia e da semana, reduzir picos e melhorar a experiência do cidadão.
+                O SIGFILA conecta totem, atendimento e gestão em um fluxo simples, com acompanhamento remoto e dados estruturados.
             </p>
             <div class="hero-ctas">
-                <a href="#estrategias" class="btn-primary">Ver estratégias <span>→</span></a>
-                <a href="/contato/" class="btn-secondary">Solicitar demonstração <span>→</span></a>
+                <a href="/contato/" class="btn-primary">
+                    Solicitar demonstração
+                    <span>→</span>
+                </a>
+                <a href="/solucao/" class="btn-secondary">
+                    Ver a solução
+                    <span>→</span>
+                </a>
+            </div>
+            <div class="hero-lgpd">
+                <strong>Transparência no processo:</strong> cada etapa gera indicadores de tempo, prioridade e satisfação para decisões rápidas.
             </div>
         </div>
         <div class="hero-visual">
-            <div class="stats-heading">Impacto esperado</div>
+            <div class="stats-heading">Fluxo operacional</div>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">-30%</div>
-                    <div class="stat-label">Tempo de espera</div>
+                    <div class="stat-value">Totem</div>
+                    <div class="stat-label">Senha e identificação</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">+40%</div>
-                    <div class="stat-label">Distribuição de demanda</div>
+                    <div class="stat-value">QR Code</div>
+                    <div class="stat-label">Acompanhamento remoto</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">4,7/5</div>
-                    <div class="stat-label">Satisfação do cidadão</div>
+                    <div class="stat-value">Painel</div>
+                    <div class="stat-label">Chamada por prioridade</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">92%</div>
-                    <div class="stat-label">SLA atendido</div>
+                    <div class="stat-value">Gestão</div>
+                    <div class="stat-label">Indicadores em tempo real</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Feedback</div>
+                    <div class="stat-label">Avaliação do cidadão</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Dados</div>
+                    <div class="stat-label">Histórico auditável</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="steps" id="estrategias">
+    <section class="steps" id="passos">
         <div class="container">
             <div class="section-header fade-in-up">
-                <div class="section-tag">● ESTRATÉGIAS-CHAVE</div>
-                <h2 class="section-title">Passos para reduzir filas com dados</h2>
+                <div class="section-tag">● COMO FUNCIONA</div>
+                <h2 class="section-title">Fluxo simples para o cidadão e para a gestão</h2>
                 <p class="section-description">
-                    Ações práticas para controlar o fluxo e melhorar o atendimento no curto prazo.
+                    Do totem à análise de dados, todo o ciclo de atendimento fica registrado.
                 </p>
             </div>
 
             <div class="steps-grid">
                 <div class="step-card fade-in-up">
                     <div class="step-number">1</div>
-                    <h3 class="step-title">Exibir filas em tempo real</h3>
-                    <p class="step-text">O cidadão consulta antes de sair de casa e distribui a demanda.</p>
+                    <h3 class="step-title">Retira a senha no totem</h3>
+                    <p class="step-text">
+                        O cidadão inicia o atendimento e pode informar o CPF para facilitar o acesso aos seus dados.
+                    </p>
                 </div>
                 <div class="step-card fade-in-up">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">Recomendar o melhor horário</h3>
-                    <p class="step-text">Reduza picos com indicação automática de horários.</p>
+                    <h3 class="step-title">Recebe QR Code</h3>
+                    <p class="step-text">Código para acompanhar a fila com transparência.</p>
                 </div>
                 <div class="step-card fade-in-up">
                     <div class="step-number">3</div>
-                    <h3 class="step-title">Organizar o fluxo no totem</h3>
-                    <p class="step-text">Senhas organizadas e prioridades respeitadas.</p>
+                    <h3 class="step-title">Acompanha pelo celular</h3>
+                    <p class="step-text">Visualiza sua posição e tempo de espera estimado.</p>
                 </div>
                 <div class="step-card fade-in-up">
                     <div class="step-number">4</div>
-                    <h3 class="step-title">Monitorar picos por serviço</h3>
-                    <p class="step-text">Ajuste equipes com base em demanda real.</p>
+                    <h3 class="step-title">É chamado conforme prioridade</h3>
+                    <p class="step-text">O sistema respeita critérios e organiza o fluxo.</p>
                 </div>
                 <div class="step-card fade-in-up">
                     <div class="step-number">5</div>
-                    <h3 class="step-title">Medir satisfação</h3>
-                    <p class="step-text">Feedback pós-atendimento orienta melhorias.</p>
+                    <h3 class="step-title">Avalia o atendimento</h3>
+                    <p class="step-text">Feedback rápido para melhoria contínua.</p>
                 </div>
                 <div class="step-card fade-in-up">
                     <div class="step-number">6</div>
-                    <h3 class="step-title">Acompanhar indicadores</h3>
-                    <p class="step-text">Gestão por dados evita crises e retrabalho.</p>
+                    <h3 class="step-title">Atualiza seus dados pessoais</h3>
+                    <p class="step-text">Após a avaliação, o cidadão pode cadastrar ou alterar seus dados.</p>
+                </div>
+                <div class="step-card fade-in-up">
+                    <div class="step-number">7</div>
+                    <h3 class="step-title">Dados são registrados e analisados</h3>
+                    <p class="step-text">Informações organizadas para decisões estratégicas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="results">
+    <section class="results" id="resultados">
         <div class="container">
             <div class="section-header fade-in-up">
-                <div class="section-tag">● INDICADORES</div>
-                <h2 class="section-title">O que medir para manter a fila sob controle</h2>
+                <div class="section-tag">● RESULTADOS</div>
+                <h2 class="section-title">O que sua prefeitura ganha com o fluxo integrado</h2>
                 <p class="section-description">
-                    Indicadores simples que dão visibilidade diária da operação.
+                    A jornada do cidadão se transforma em dados confiáveis para gestão diária e prestação de contas.
                 </p>
             </div>
+
             <div class="results-grid">
                 <div class="result-card fade-in-up">
-                    <div class="result-title">Tempo médio por serviço</div>
-                    <p class="result-text">Visão por secretaria para redistribuir equipes.</p>
+                    <div class="result-title">Dados em tempo real</div>
+                    <p class="result-text">Acompanhe filas, tempo médio e produtividade por unidade.</p>
                 </div>
                 <div class="result-card fade-in-up">
-                    <div class="result-title">Horários de pico</div>
-                    <p class="result-text">Identificação automática das janelas críticas.</p>
+                    <div class="result-title">Indicadores por serviço</div>
+                    <p class="result-text">Compare desempenhos e identifique gargalos rapidamente.</p>
+                </div>
+                <div class="result-card fade-in-up">
+                    <div class="result-title">Histórico auditável</div>
+                    <p class="result-text">Registro completo de atendimentos, prioridades e decisões.</p>
                 </div>
                 <div class="result-card fade-in-up">
                     <div class="result-title">Satisfação do cidadão</div>
-                    <p class="result-text">Evolução semanal com feedbacks reais.</p>
+                    <p class="result-text">Feedback direto para melhoria contínua do atendimento.</p>
                 </div>
+            </div>
+
+            <div class="results-cta">
+                <a href="/contato/" class="btn-primary">
+                    Solicitar demonstração
+                    <span>→</span>
+                </a>
             </div>
         </div>
     </section>
 
-<section class="cta-section" id="contato">
-    <div class="cta-content fade-in-up">
-        <h2>Vamos transformar o atendimento<br>da sua prefeitura</h2>
-        <p>Solicite uma demonstração e receba um diagnóstico gratuito com um especialista do SIGFILA.</p>
-        <form class="cta-form" onsubmit="return handleSubmit(event)">
-            <label class="sr-only" for="cta-name">Nome</label>
-            <input id="cta-name" name="name" type="text" class="cta-input" placeholder="Seu nome" autocomplete="name" required>
-            <label class="sr-only" for="cta-email">E-mail</label>
-            <input id="cta-email" name="email" type="email" class="cta-input" placeholder="seu-email@prefeitura.gov.br" autocomplete="email" required>
-            <label class="sr-only" for="cta-phone">Telefone</label>
-            <input id="cta-phone" name="phone" type="tel" class="cta-input" placeholder="Telefone/WhatsApp" autocomplete="tel" required>
-            <label class="sr-only" for="cta-city">Município</label>
-            <input id="cta-city" name="city" type="text" class="cta-input" placeholder="Município" autocomplete="address-level2" required>
-            <label class="sr-only" for="cta-message">Mensagem</label>
-            <textarea id="cta-message" name="message" class="cta-input cta-textarea full" placeholder="Conte um pouco sobre o desafio da sua prefeitura" required></textarea>
-            <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <div class="cta-actions full">
-                <button type="submit" class="cta-button">Solicitar demonstração</button>
-                <a href="/contato/" class="cta-link">Falar com especialista</a>
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Veja o SIGFILA em funcionamento na sua realidade</h2>
+            <p>Agende uma demonstração e receba um diagnóstico gratuito do atendimento da sua prefeitura.</p>
+            <div class="hero-ctas">
+                <a href="/contato/" class="btn-primary">
+                    Agendar demonstração
+                    <span>→</span>
+                </a>
+                <a href="/solucao/" class="btn-secondary">
+                    Voltar para a solução
+                    <span>→</span>
+                </a>
             </div>
-        </form>
-        <div class="form-message" role="status" aria-live="polite"></div>
-    </div>
-</section>
+        </div>
+    </section>
 </main>
-<footer>
-    <div class="footer-content">
-        <div class="footer-brand">
-            <div class="footer-logo">SIGFILA</div>
-            <p class="footer-tagline">
-                Sistema Inteligente de Gestão de Filas. Transformando atendimento público em dados estratégicos desde 2026.
-            </p>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">SIGFILA</div>
+                <p class="footer-tagline">
+                    Sistema Inteligente de GestÃ£o de Filas. Transformando atendimento pÃºblico em dados estratÃ©gicos desde 2026.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Produto</h4>
+                <ul class="footer-links">
+                    <li><a href="/solucao/">SoluÃ§Ã£o</a></li>
+                    <li><a href="/como-funciona/" class="active">Como Funciona</a></li>
+                    <li><a href="/transparencia/">TransparÃªncia</a></li>
+                    <li><a href="/lgpd/">LGPD</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title">ConteÃºdo</h4>
+                <ul class="footer-links">
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/como-reduzir-filas/">Como reduzir filas</a></li>
+                    <li><a href="/lgpd-prefeituras/">LGPD nas prefeituras</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Contato</h4>
+                <ul class="footer-links">
+                    <li><a href="/contato/">Fale conosco</a></li>
+                    <li><a href="/contato/">Solicitar demonstraÃ§Ã£o</a></li>
+                    <li><a href="/transparencia/">TransparÃªncia</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div>
-            <h4 class="footer-title">Produto</h4>
-            <ul class="footer-links">
-                <li><a href="/solucao/">Solução</a></li>
-                <li><a href="/como-funciona/">Como Funciona</a></li>
-                <li><a href="/transparencia/">Transparência</a></li>
-                <li><a href="/lgpd/">LGPD</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <div>Â© 2026 SIGFILA. Todos os direitos reservados.</div>
+            <div class="mono">por Marcos Matos</div>
         </div>
+    </footer>
 
-        <div>
-            <h4 class="footer-title">Conteúdo</h4>
-            <ul class="footer-links">
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/como-reduzir-filas/">Como reduzir filas</a></li>
-                <li><a href="/lgpd-prefeituras/">LGPD nas prefeituras</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class="footer-title">Contato</h4>
-            <ul class="footer-links">
-                <li><a href="/contato/">Fale conosco</a></li>
-                <li><a href="/contato/">Solicitar demonstração</a></li>
-                <li><a href="/transparencia/">Transparência</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div>© 2026 SIGFILA. Todos os direitos reservados.</div>
-        <div class="mono">por Marcos Matos</div>
-    </div>
-</footer>
-<script>
-
+    <script>
         // Scroll Animations
         const observerOptions = {
             threshold: 0.1,
@@ -1729,12 +1760,12 @@
                 if (message) {
                     const nowText = new Date().toLocaleString('pt-BR');
                     const nameText = name ? `, ${name}` : '';
-                    message.textContent = `Obrigado${nameText}! Recebemos sua solicitação em ${nowText}. Entraremos em contato em ${email} em breve para a demonstração do SIGFILA.`;
+                    message.textContent = `Obrigado${nameText}! Recebemos sua solicitaÃ§Ã£o em ${nowText}. Entraremos em contato em ${email} em breve para a demonstraÃ§Ã£o do SIGFILA.`;
                 }
                 e.target.reset();
             } catch (err) {
                 if (message) {
-                    message.textContent = 'Não foi possível enviar agora. Tente novamente mais tarde.';
+                    message.textContent = 'NÃ£o foi possÃ­vel enviar agora. Tente novamente mais tarde.';
                 }
             } finally {
                 if (button) {
@@ -1777,20 +1808,9 @@
                 });
             });
         }
-    
-</script>
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -146,6 +146,15 @@
             color: var(--cyan);
         }
 
+        .nav-links a.active {
+            color: var(--cyan);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -1435,20 +1444,22 @@
 <body id="top">
 <header>
     <nav>
-        <a href="/" class="logo-container" aria-label="Voltar ao topo">
-            <img src="/logo.png" alt="SIGFILA Logo" class="logo-mark" width="250" height="58">
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-            Menu
-        </button>
-        <div class="nav-links" id="primary-navigation">
-            <a href="/#inicio">Home</a>
-            <a href="/como-reduzir-filas">Redução de filas</a>
-            <a href="/lgpd-prefeituras">Adequação LGPD</a>
-            <a href="/blog" class="active">Blog</a>
-            <a href="/#contato" class="btn-demo">Contato</a>
-        </div>
-    </nav>
+    <a href="/" class="logo-container" aria-label="Voltar para a página inicial">
+        <img src="/logo.png" alt="SIGFILA Logo" class="logo-mark" width="250" height="58">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        Menu
+    </button>
+    <div class="nav-links" id="primary-navigation">
+        <a href="/">Início</a>
+        <a href="/solucao/">Solução</a>
+        <a href="/como-funciona/">Como Funciona</a>
+        <a href="/lgpd/">LGPD</a>
+        <a href="/transparencia/">Transparência</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/contato/" class="btn-demo">Contato</a>
+    </div>
+</nav>
 </header>
 <main>
     <section class="hero" id="inicio">
@@ -1463,7 +1474,7 @@
             </p>
             <div class="hero-ctas">
                 <a href="#guias" class="btn-primary">Ver guias estratégicos <span>→</span></a>
-                <a href="/#contato" class="btn-secondary">Falar com especialista <span>→</span></a>
+                <a href="/contato/" class="btn-secondary">Falar com especialista <span>→</span></a>
             </div>
         </div>
         <div class="hero-visual">
@@ -1518,7 +1529,7 @@
                     <span class="feature-emoji">📈</span>
                     <h3 class="feature-name">Gestão em tempo real</h3>
                     <p class="feature-text">Indicadores que mostram onde agir antes que vire crise.</p>
-                    <a href="/#contato" class="btn-secondary">Solicitar demonstração</a>
+                    <a href="/contato/" class="btn-secondary">Solicitar demonstração</a>
                 </div>
             </div>
         </div>
@@ -1569,7 +1580,7 @@
             <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="cta-actions full">
                 <button type="submit" class="cta-button">Solicitar demonstração</button>
-                <a href="#contato" class="cta-link">Falar com especialista</a>
+                <a href="/contato/" class="cta-link">Falar com especialista</a>
             </div>
         </form>
         <div class="form-message" role="status" aria-live="polite"></div>
@@ -1588,32 +1599,28 @@
         <div>
             <h4 class="footer-title">Produto</h4>
             <ul class="footer-links">
-                <li><a href="/#ao-vivo">Atendimento ao Vivo</a></li>
-                <li><a href="/#solucao">Solução</a></li>
-                <li><a href="/#como-funciona">Como Funciona</a></li>
-                <li><a href="/#beneficios">Benefícios</a></li>
-                <li><a href="/#lgpd">LGPD</a></li>
-                <li><a href="/#para-prefeituras">Para Prefeituras</a></li>
+                <li><a href="/solucao/">Solução</a></li>
+                <li><a href="/como-funciona/">Como Funciona</a></li>
+                <li><a href="/transparencia/">Transparência</a></li>
+                <li><a href="/lgpd/">LGPD</a></li>
             </ul>
         </div>
 
         <div>
-            <h4 class="footer-title">Empresa</h4>
+            <h4 class="footer-title">Conteúdo</h4>
             <ul class="footer-links">
-                <li><a href="/#inicio">Home</a></li>
-                <li><a href="/blog" class="active">Blog</a></li>
-                <li><a href="/#contato">Contato</a></li>
-                <li><a href="#">Suporte</a></li>
-                <li><a href="#">Documentação</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/como-reduzir-filas/">Como reduzir filas</a></li>
+                <li><a href="/lgpd-prefeituras/">LGPD nas prefeituras</a></li>
             </ul>
         </div>
 
         <div>
-            <h4 class="footer-title">Legal</h4>
+            <h4 class="footer-title">Contato</h4>
             <ul class="footer-links">
-                <li><a href="#">Política de Privacidade</a></li>
-                <li><a href="#">Termos de Uso</a></li>
-                <li><a href="/#lgpd">LGPD</a></li>
+                <li><a href="/contato/">Fale conosco</a></li>
+                <li><a href="/contato/">Solicitar demonstração</a></li>
+                <li><a href="/transparencia/">Transparência</a></li>
             </ul>
         </div>
     </div>
@@ -1765,6 +1772,9 @@
 </script>
 </body>
 </html>
+
+
+
 
 
 
