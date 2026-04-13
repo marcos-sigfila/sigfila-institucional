@@ -1,0 +1,682 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pressão política por filas: como reduzir reclamações com dados | Blog SIGFILA</title>
+    <meta name="description" content="Use indicadores para reduzir ruído político e mostrar evolução real do atendimento.">
+    <link rel="canonical" href="https://sigfila.com.br/blog/pressao-politica-filas-dados/">
+    <link rel="icon" type="image/x-icon" href="/sigfila.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cyan: #00AEEF;
+            --cyan-dark: #0090C8;
+            --cyan-light: #E6F7FF;
+            --green: #22C55E;
+            --purple: #7C3AED;
+            --amber: #F59E0B;
+            --bg: #FAFBFC;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --text-primary: #1E293B;
+            --text-secondary: #64748B;
+            --text-tertiary: #94A3B8;
+        }
+
+        html {
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .mono {
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-mark {
+            width: 250px;
+            height: 58px;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 320px;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 5.5rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            align-items: flex-start;
+            transform: translateX(100%);
+            transition: transform 0.35s ease;
+            z-index: 1100;
+            box-shadow: -12px 0 32px rgba(15, 23, 42, 0.35);
+            overflow-y: auto;
+        }
+
+        .nav-links.open {
+            transform: translateX(0);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e2e8f0;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .nav-links a.active {
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #38bdf8;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links .btn-demo {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+
+        .nav-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            border: 1px solid rgba(226, 232, 240, 0.35);
+            background: transparent;
+            color: #e2e8f0;
+            border-radius: 10px;
+            width: 42px;
+            height: 42px;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .nav-close:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.55);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+            z-index: 1050;
+        }
+
+        .nav-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        body.nav-open {
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--cyan);
+            color: white;
+            padding: 0.85rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 174, 239, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--cyan-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 174, 239, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 0.85rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+            transform: translateY(-2px);
+        }
+
+        .nav-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--text-primary);
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-toggle span i {
+            width: 18px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 999px;
+        }
+
+        main {
+            padding-top: 110px;
+        }
+
+        .hero {
+            padding: 80px 2rem 60px;
+            background: linear-gradient(135deg, #E6F7FF 0%, #FFFFFF 65%);
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            background: var(--cyan-light);
+            color: var(--cyan-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--cyan);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 760px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .chip-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .chip-link:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        .content {
+            padding: 70px 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .content-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        .content-card.full {
+            margin-top: 1.5rem;
+        }
+
+        .content-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-list {
+            list-style: none;
+            display: grid;
+            gap: 0.6rem;
+            color: var(--text-secondary);
+        }
+
+        .content-list li::before {
+            content: '•';
+            color: var(--cyan);
+            font-weight: 700;
+            display: inline-block;
+            width: 1rem;
+        }
+
+        .cta-section {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-section p {
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2rem;
+        }
+
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        footer {
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+                .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 0.75rem;
+            display: inline-block;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .related-posts {
+            padding: 70px 2rem;
+            background: white;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .related-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            background: var(--cyan-light);
+            color: var(--cyan-dark);
+            font-weight: 600;
+            font-size: 0.75rem;
+            width: fit-content;
+        }
+
+        .related-card h3 {
+            font-size: 1.15rem;
+            margin: 0;
+        }
+
+        .related-card p {
+            color: var(--text-secondary);
+        }
+
+        .related-card a {
+            color: var(--cyan-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .related-card a:hover {
+            color: var(--cyan);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.25rem;
+            }
+
+            .logo-mark {
+                width: 210px;
+                height: auto;
+            }
+
+            h1 {
+                font-size: 2.1rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="/" class="logo-container" aria-label="SIGFILA">
+            <img src="/logo.png" alt="Logo SIGFILA" class="logo-mark">
+        </a>
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+            Menu
+            <span aria-hidden="true">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </button>
+        <div class="nav-links" id="primary-navigation">
+            <button class="nav-close" aria-label="Fechar menu">×</button>
+            <a href="/">Início</a>
+            <a href="/sistema-de-filas/">Sistema de Filas</a>
+            <a href="/como-funciona/">Como Funciona</a>
+            <a href="/como-reduzir-filas/">Redução de Filas</a>
+            <a href="/indicadores/">Indicadores</a>
+            <a href="/lgpd/">LGPD</a>
+            <a href="/lgpd-prefeituras/">LGPD Prefeituras</a>
+            <a href="/para-prefeitos/">Para Prefeitos</a>
+            <a href="/para-secretarios/">Para Secretários</a>
+            <a href="/para-atendimento/">Para Atendimento</a>
+            <a href="/blog/" class="active">Blog</a>
+            <a href="/contato/">Contato</a>
+            <a href="/diagnostico/" class="btn-demo">Diagnóstico</a>
+        </div>
+    </nav>
+    <div class="nav-overlay" data-nav-overlay></div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                <span>Blog SIGFILA</span>
+            </div>
+            <h1>Pressão política por filas: como reduzir reclamações com dados</h1>
+            <p class="hero-description">Quando a fila cresce, a pressão política aumenta. Dados confiáveis ajudam a gerir a percepção e priorizar ações.</p>
+            <div class="hero-links">
+                <a class="chip-link" href="/para-prefeitos/">Para prefeitos</a>
+                <a class="chip-link" href="/indicadores/">Indicadores do atendimento</a>
+                <a class="chip-link" href="/diagnostico/">Agendar diagnóstico</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="content-grid">
+                <article class="content-card">
+                    <h2>Neste artigo você vai ver</h2>
+                    <ul class="content-list">
+                        <li>Identificar gargalos que geram reclamações</li>
+                        <li>Mostrar evolução com relatórios públicos</li>
+                        <li>Priorizar serviços críticos</li>
+                    </ul>
+                </article>
+                <article class="content-card">
+                    <h2>Indicadores para acompanhar</h2>
+                    <ul class="content-list">
+                        <li>Reclamações por unidade</li>
+                        <li>Tempo médio por serviço crítico</li>
+                        <li>Evolução mensal do tempo de espera</li>
+                    </ul>
+                </article>
+            </div>
+            <article class="content-card full">
+                <h2>Aplicação prática</h2>
+                <p>Estabeleça metas públicas e reporte evolução mensal. Use os dados para justificar ajustes e mostrar melhoria contínua.</p>
+                <p><strong>Resultado esperado:</strong> decisões mais rápidas, queda de reclamações e evidências claras de evolução do atendimento.</p>
+            </article>
+        </div>
+    </section>
+
+        <section class="related-posts">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">● LEIA TAMBÉM</div>
+                <h2 class="section-title">Outros conteúdos que ajudam na decisão</h2>
+                <p class="section-description">Aprofunde em temas estratégicos para o atendimento público.</p>
+            </div>
+            <div class="related-grid">
+                <article class="related-card">
+                    <span class="related-tag">Saúde</span>
+                    <h3>Gestão de filas no SUS municipal: como organizar e reduzir tempo de espera</h3>
+                    <p>Aplicações práticas em saúde para reduzir tempo de espera e melhorar o atendimento.</p>
+                    <a href="/blog/filas-sus-municipal/">Ler artigo →</a>
+                </article>
+                <article class="related-card">
+                    <span class="related-tag">Auditoria</span>
+                    <h3>Rastreabilidade de dados no atendimento: quem acessou, quando e por quê</h3>
+                    <p>Logs e auditoria para segurança da informação e conformidade com a LGPD.</p>
+                    <a href="/blog/rastreabilidade-dados-atendimento/">Ler artigo →</a>
+                </article>
+                <article class="related-card">
+                    <span class="related-tag">Filas</span>
+                    <h3>Como reduzir filas em órgãos públicos: estratégias que funcionam</h3>
+                    <p>Guia prático para reduzir filas, distribuir demanda e melhorar o atendimento público com dados.</p>
+                    <a href="/blog/reduzir-filas-orgaos-publicos/">Ler artigo →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container">
+            <h2>Quer aplicar isso na sua prefeitura?</h2>
+            <p>Agende um diagnóstico gratuito e receba um plano com foco em resultados rápidos.</p>
+            <div class="cta-actions">
+                <a href="/diagnostico/" class="btn-primary">Agendar diagnóstico</a>
+                <a href="/sistema-de-filas/" class="btn-secondary">Conhecer o sistema</a>
+                <a href="/blog/" class="btn-secondary">Voltar ao blog</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div>© 2026 SIGFILA. Conteúdo para gestores públicos.</div>
+</footer>
+
+<script>
+    // Menu Drawer
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navOverlay = document.querySelector('.nav-overlay');
+    const navClose = document.querySelector('.nav-close');
+    const body = document.body;
+
+    const closeNav = () => {
+        if (navLinks) navLinks.classList.remove('open');
+        if (navOverlay) navOverlay.classList.remove('open');
+        if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+        body.classList.remove('nav-open');
+    };
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            if (navOverlay) navOverlay.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            body.classList.toggle('nav-open', isOpen);
+        });
+
+        if (navOverlay) {
+            navOverlay.addEventListener('click', closeNav);
+        }
+
+        if (navClose) {
+            navClose.addEventListener('click', closeNav);
+        }
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeNav);
+        });
+    }
+</script>
+</body>
+</html>
+

@@ -1176,6 +1176,56 @@
             flex-shrink: 0;
         }
 
+        .recent-posts {
+            padding: 90px 2rem;
+            background: var(--bg);
+        }
+
+        .recent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
+            margin-top: 3rem;
+        }
+
+        .recent-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            display: grid;
+            gap: 1rem;
+        }
+
+        .recent-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            background: var(--cyan-light);
+            color: var(--cyan-dark);
+            font-weight: 600;
+            font-size: 0.8rem;
+            width: fit-content;
+        }
+
+        .recent-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .recent-card p {
+            color: var(--text-secondary);
+        }
+
+        .recent-cta {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-dark) 100%);
@@ -1987,6 +2037,45 @@
                     Agendar demonstração com especialista
                     <span>→</span>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="recent-posts" id="posts-recentes">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <div class="section-tag">● POSTS RECENTES</div>
+                <h2 class="section-title">Conteúdo prático para gestores públicos</h2>
+                <p class="section-description">
+                    Três guias diretos para reduzir filas, melhorar a transparência e tomar decisões com dados.
+                </p>
+            </div>
+
+            <div class="recent-grid">
+                <article class="recent-card fade-in-up">
+                    <span class="recent-tag">Filas</span>
+                    <h3>Como reduzir filas em órgãos públicos</h3>
+                    <p>Estratégias para mapear gargalos, redistribuir demanda e reduzir o tempo de espera.</p>
+                    <a href="/blog/reduzir-filas-orgaos-publicos/" class="btn-secondary">Ler artigo <span>→</span></a>
+                </article>
+
+                <article class="recent-card fade-in-up">
+                    <span class="recent-tag">LGPD</span>
+                    <h3>LGPD na prática para prefeituras</h3>
+                    <p>Base legal, rastreabilidade e auditoria para proteger dados do cidadão.</p>
+                    <a href="/blog/lgpd-na-pratica-prefeituras/" class="btn-secondary">Ler artigo <span>→</span></a>
+                </article>
+
+                <article class="recent-card fade-in-up">
+                    <span class="recent-tag">Indicadores</span>
+                    <h3>Indicadores de atendimento público</h3>
+                    <p>As métricas que ajudam a secretaria a agir rápido e comprovar evolução.</p>
+                    <a href="/blog/indicadores-atendimento-publico/" class="btn-secondary">Ler artigo <span>→</span></a>
+                </article>
+            </div>
+
+            <div class="recent-cta">
+                <a href="/blog/" class="btn-primary">Ver todos os posts <span>→</span></a>
             </div>
         </div>
     </section>
