@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Prefeitos | SIGFILA</title>
-    <meta name="description" content="Reduza filas, melhore a imagem da gestão e tenha controle do atendimento com dados em tempo real.">
+    <meta name="description" content="Reduza filas, corte reclamações e ganhe aprovação com dados em tempo real para a gestão municipal.">
     <link rel="canonical" href="https://sigfila.com.br/para-prefeitos/">
     <link rel="icon" type="image/x-icon" href="/sigfila.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -249,6 +249,45 @@
             background: var(--cyan-dark);
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(0, 174, 239, 0.3);
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0 0;
+        }
+
+        .quick-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            background: var(--cyan-light);
+            color: var(--cyan-dark);
+            border: 1px solid rgba(0, 174, 239, 0.3);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .quick-link:hover {
+            background: #d8f2ff;
+            transform: translateY(-1px);
+        }
+
+        .text-link {
+            color: var(--cyan-dark);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 174, 239, 0.5);
+        }
+
+        .text-link:hover {
+            color: var(--cyan);
+            border-bottom-color: var(--cyan);
         }
 
         .nav-toggle {
@@ -1540,24 +1579,29 @@
         <div class="hero-content">
             <div class="badge">
                 <span class="badge-dot"></span>
-                <span>Para Prefeitos • Impacto político</span>
+                <span>Para Prefeitos • Aprovação e controle</span>
             </div>
-            <h1>Reduza filas e aumente a aprovação com <span class="gradient-text">dados em tempo real</span></h1>
+            <h1>Reduza filas, corte reclamações e ganhe aprovação com <span class="gradient-text">dados em tempo real</span></h1>
             <p class="hero-description">
-                Fim das reclamações e da falta de controle. O SIGFILA entrega visão executiva do atendimento e transparência para o cidadão.
+                Filas viram pressão política quando faltam dados. O SIGFILA entrega visão executiva por secretaria, revela gargalos e comprova evolução do atendimento.
             </p>
+            <div class="quick-links">
+                <a class="quick-link" href="/como-reduzir-filas/">Plano de redução de filas</a>
+                <a class="quick-link" href="/indicadores/">Indicadores por secretaria</a>
+                <a class="quick-link" href="/lgpd-prefeituras/">LGPD para prefeituras</a>
+            </div>
             <div class="hero-ctas">
                 <a href="/diagnostico/" class="btn-primary">
-                    Agendar diagnóstico com especialista
+                    Agendar diagnóstico agora
                     <span>→</span>
                 </a>
-                <a href="/indicadores/" class="btn-secondary">
-                    Ver indicadores em tempo real
+                <a href="/como-reduzir-filas/" class="btn-secondary">
+                    Ver plano de redução de filas
                     <span>→</span>
                 </a>
             </div>
             <div class="hero-lgpd">
-                <strong>LGPD na prática:</strong> rastreabilidade de acessos e auditoria para evitar riscos jurídicos.
+                <strong>LGPD na prática:</strong> rastreabilidade, base legal e auditoria para blindar a gestão.
             </div>
         </div>
         <div class="hero-visual">
@@ -1597,23 +1641,23 @@
                 <div class="section-tag">● O DESAFIO</div>
                 <h2 class="section-title">Filas geram pressão política e desgaste da gestão</h2>
                 <p class="section-description">
-                    Reclamações públicas e falta de dados dificultam decisões rápidas. O SIGFILA organiza o atendimento e dá controle.
+                    Reclamações públicas e falta de dados travam decisões rápidas. Conheça o <a class="text-link" href="/como-reduzir-filas/">plano de redução de filas</a> e assuma o controle.
                 </p>
             </div>
 
             <div class="live-grid">
                 <div class="live-copy fade-in-up">
                     <h3 class="live-title">Controle executivo do atendimento municipal</h3>
-                    <p class="live-text">Visão consolidada por secretaria, unidade e serviço.</p>
-                    <p class="live-text">Dados para decisões políticas e operacionais, com transparência para o cidadão.</p>
+                    <p class="live-text">Visão consolidada por secretaria, unidade e serviço, sem depender de planilhas.</p>
+                    <p class="live-text">Dados para decisões políticas e operacionais, com transparência pública e <a class="text-link" href="/indicadores/">indicadores em tempo real</a>.</p>
                     <ul class="live-benefits">
                         <li>Relatórios por secretaria e unidade</li>
                         <li>Tempo médio de espera por serviço</li>
                         <li>Ranking de atendimento por unidade</li>
                         <li>Indicadores de satisfação e SLA</li>
                     </ul>
-                    <a href="/diagnostico/" class="btn-secondary">
-                        Agendar diagnóstico com especialista
+                    <a href="/como-reduzir-filas/" class="btn-secondary">
+                        Ver plano de redução de filas
                         <span>→</span>
                     </a>
                 </div>
@@ -1654,7 +1698,7 @@
             <div class="section-header fade-in-up">
                 <div class="section-tag">● IMPACTO</div>
                 <h2 class="section-title">Resultados políticos e operacionais</h2>
-                <p class="section-description">Menos filas, mais transparência e melhor imagem pública.</p>
+                <p class="section-description">Menos filas, mais transparência e melhor imagem pública com dados auditáveis.</p>
             </div>
 
             <div class="comparison-grid">
@@ -1686,11 +1730,11 @@
             <p>Agende um diagnóstico gratuito e veja como reduzir filas na sua prefeitura.</p>
             <div class="hero-ctas">
                 <a href="/diagnostico/" class="btn-primary">
-                    Agendar diagnóstico com especialista
+                    Agendar diagnóstico agora
                     <span>→</span>
                 </a>
-                <a href="/sistema-de-filas/" class="btn-secondary">
-                    Conhecer o sistema
+                <a href="/indicadores/" class="btn-secondary">
+                    Ver indicadores da prefeitura
                     <span>→</span>
                 </a>
             </div>
