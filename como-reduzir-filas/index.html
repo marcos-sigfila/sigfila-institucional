@@ -1,4 +1,4 @@
-﻿?<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -127,27 +127,44 @@
             text-transform: uppercase;
         }
 
-        .nav-links {
+                .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 320px;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 5.5rem 2rem 2rem;
             display: flex;
+            flex-direction: column;
             gap: 1.25rem;
-            align-items: center;
+            align-items: flex-start;
+            transform: translateX(100%);
+            transition: transform 0.35s ease;
+            z-index: 1100;
+            box-shadow: -12px 0 32px rgba(15, 23, 42, 0.35);
+        }
+
+        .nav-links.open {
+            transform: translateX(0);
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-secondary);
+            color: #e2e8f0;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: color 0.3s;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: var(--cyan);
+            color: #38bdf8;
         }
 
         .nav-links a.active {
-            color: var(--cyan);
+            color: #38bdf8;
             font-weight: 600;
         }
 
@@ -158,16 +175,61 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -6px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--cyan);
+            background: #38bdf8;
             transition: width 0.3s;
         }
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        .nav-links .btn-demo {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+
+        .nav-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            border: 1px solid rgba(226, 232, 240, 0.35);
+            background: transparent;
+            color: #e2e8f0;
+            border-radius: 10px;
+            width: 42px;
+            height: 42px;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .nav-close:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.55);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+            z-index: 1050;
+        }
+
+        .nav-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        body.nav-open {
+            overflow: hidden;
         }
 
         .btn-demo {
@@ -189,12 +251,14 @@
         }
 
         .nav-toggle {
-            display: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
             border: 1px solid var(--border);
             background: white;
             color: var(--text-primary);
-            padding: 0.5rem 0.75rem;
-            border-radius: 8px;
+            padding: 0.6rem 0.85rem;
+            border-radius: 999px;
             font-weight: 600;
             cursor: pointer;
         }
@@ -202,6 +266,20 @@
         .nav-toggle:hover {
             border-color: var(--cyan);
             color: var(--cyan);
+        }
+
+        .nav-toggle-icon {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-toggle-icon span {
+            width: 18px;
+            height: 2px;
+            background: currentColor;
+            display: block;
+            border-radius: 999px;
         }
 
         /* Hero Section */
@@ -1362,28 +1440,9 @@
                 gap: 2rem;
             }
 
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 72px;
-                right: 2rem;
-                background: white;
-                border: 1px solid var(--border);
-                border-radius: 12px;
-                padding: 1rem;
-                flex-direction: column;
-                gap: 0.75rem;
-                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-            }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .nav-toggle {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
+                        .nav-links {
+                width: 100%;
+                padding-top: 5rem;
             }
         }
 
@@ -1448,18 +1507,26 @@
         <img src="/logo.png" alt="SIGFILA Logo" class="logo-mark" width="250" height="58">
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-        Menu
+        <span class="nav-toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="nav-toggle-label">Menu</span>
     </button>
     <div class="nav-links" id="primary-navigation">
+        <button class="nav-close" type="button" aria-label="Fechar menu">×</button>
         <a href="/">Início</a>
-        <a href="/solucao/">Solução</a>
+        <a href="/sistema-de-filas/">Sistema de Filas</a>
         <a href="/como-funciona/">Como Funciona</a>
         <a href="/lgpd/">LGPD</a>
-        <a href="/transparencia/">Transparência</a>
+        <a href="/indicadores/">Indicadores</a>
         <a href="/blog/" class="active">Blog</a>
-        <a href="/contato/" class="btn-demo">Contato</a>
+        <a href="/contato/">Contato</a>
+        <a href="/diagnostico/" class="btn-demo">Diagnóstico</a>
     </div>
 </nav>
+    <div class="nav-overlay" data-nav-overlay></div>
 </header>
 <main>
     <section class="hero" id="inicio">
@@ -1473,8 +1540,8 @@
                 Estratégias para distribuir a demanda ao longo do dia e da semana, reduzir picos e melhorar a experiência do cidadão.
             </p>
             <div class="hero-ctas">
-                <a href="#estrategias" class="btn-primary">Ver estratégias <span>?</span></a>
-                <a href="/contato/" class="btn-secondary">Solicitar demonstração <span>?</span></a>
+                <a href="#estrategias" class="btn-primary">Ver estratégias <span>→</span></a>
+                <a href="/contato/" class="btn-secondary">Solicitar demonstração <span>→</span></a>
             </div>
         </div>
         <div class="hero-visual">
@@ -1503,7 +1570,7 @@
     <section class="steps" id="estrategias">
         <div class="container">
             <div class="section-header fade-in-up">
-                <div class="section-tag">? ESTRATÉGIAS-CHAVE</div>
+                <div class="section-tag">● ESTRATÉGIAS-CHAVE</div>
                 <h2 class="section-title">Passos para reduzir filas com dados</h2>
                 <p class="section-description">
                     Ações práticas para controlar o fluxo e melhorar o atendimento no curto prazo.
@@ -1548,7 +1615,7 @@
     <section class="results">
         <div class="container">
             <div class="section-header fade-in-up">
-                <div class="section-tag">? INDICADORES</div>
+                <div class="section-tag">● INDICADORES</div>
                 <h2 class="section-title">O que medir para manter a fila sob controle</h2>
                 <p class="section-description">
                     Indicadores simples que dão visibilidade diária da operação.
@@ -1608,9 +1675,9 @@
         <div>
             <h4 class="footer-title">Produto</h4>
             <ul class="footer-links">
-                <li><a href="/solucao/">Solução</a></li>
+                <li><a href="/sistema-de-filas/">Sistema de Filas</a></li>
                 <li><a href="/como-funciona/">Como Funciona</a></li>
-                <li><a href="/transparencia/">Transparência</a></li>
+                <li><a href="/indicadores/">Indicadores</a></li>
                 <li><a href="/lgpd/">LGPD</a></li>
             </ul>
         </div>
@@ -1629,7 +1696,7 @@
             <ul class="footer-links">
                 <li><a href="/contato/">Fale conosco</a></li>
                 <li><a href="/contato/">Solicitar demonstração</a></li>
-                <li><a href="/transparencia/">Transparência</a></li>
+                <li><a href="/indicadores/">Indicadores</a></li>
             </ul>
         </div>
     </div>
@@ -1758,29 +1825,51 @@
             }
         });
 
-        // Mobile Nav Toggle
+                // Menu Drawer
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const navClose = document.querySelector('.nav-close');
+        const body = document.body;
+
+        const closeNav = () => {
+            if (navLinks) navLinks.classList.remove('open');
+            if (navOverlay) navOverlay.classList.remove('open');
+            if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+            body.classList.remove('nav-open');
+        };
 
         if (navToggle && navLinks) {
             navToggle.addEventListener('click', () => {
                 const isOpen = navLinks.classList.toggle('open');
+                if (navOverlay) navOverlay.classList.toggle('open', isOpen);
                 navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                body.classList.toggle('nav-open', isOpen);
             });
 
-            navLinks.querySelectorAll('a[href^="#"]').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navLinks.classList.contains('open')) {
-                        navLinks.classList.remove('open');
-                        navToggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
+            if (navOverlay) {
+                navOverlay.addEventListener('click', closeNav);
+            }
+
+            if (navClose) {
+                navClose.addEventListener('click', closeNav);
+            }
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeNav);
             });
         }
     
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

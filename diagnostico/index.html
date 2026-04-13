@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LGPD para Prefeituras | SIGFILA</title>
-    <meta name="description" content="Checklist prático de LGPD para prefeituras e atendimento público.">
+    <title>Diagnóstico de Atendimento Público | SIGFILA</title>
+    <meta name="description" content="Receba um diagnóstico gratuito do atendimento da sua prefeitura com indicadores, filas e pontos críticos.">
+    <link rel="canonical" href="https://sigfila.com.br/diagnostico/">
     <link rel="icon" type="image/x-icon" href="/sigfila.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -573,7 +573,7 @@
         }
 
         .live-benefits li::before {
-            content: '?';
+            content: '✓';
             color: var(--green);
             font-weight: 700;
         }
@@ -809,7 +809,7 @@
         }
 
         .comparison-list li::before {
-            content: '✓';
+            content: '•';
             color: var(--cyan);
             margin-right: 0.5rem;
         }
@@ -1168,7 +1168,7 @@
         }
 
         .case-features li::before {
-            content: '?';
+            content: '✓';
             color: var(--green);
             font-weight: bold;
             font-size: 1.1rem;
@@ -1497,12 +1497,12 @@
                 scroll-behavior: auto !important;
             }
         }
-    
     </style>
 </head>
 <body id="top">
-<header>
-    <nav>
+    <!-- Header -->
+    <header>
+        <nav>
     <a href="/" class="logo-container" aria-label="Voltar para a página inicial">
         <img src="/logo.png" alt="SIGFILA Logo" class="logo-mark" width="250" height="58">
     </a>
@@ -1521,203 +1521,173 @@
         <a href="/como-funciona/">Como Funciona</a>
         <a href="/lgpd/">LGPD</a>
         <a href="/indicadores/">Indicadores</a>
-        <a href="/blog/" class="active">Blog</a>
+        <a href="/blog/">Blog</a>
         <a href="/contato/">Contato</a>
-        <a href="/diagnostico/" class="btn-demo">Diagnóstico</a>
+        <a href="/diagnostico/" class="btn-demo active">Diagnóstico</a>
     </div>
 </nav>
     <div class="nav-overlay" data-nav-overlay></div>
-</header>
-<main>
+    </header>
+
+    <main>
     <section class="hero" id="inicio">
         <div class="hero-content">
             <div class="badge">
                 <span class="badge-dot"></span>
-                <span>Checklist LGPD no Setor público</span>
+                <span>Diagnóstico gratuito • Atendimento público</span>
             </div>
-            <h1><span class="gradient-text">LGPD para prefeituras:</span> do atendimento à rastreabilidade</h1>
+            <h1>Diagnóstico gratuito para reduzir filas e recuperar o <span class="gradient-text">controle do atendimento</span></h1>
             <p class="hero-description">
-                Um roteiro prático para adequação à LGPD no atendimento público, com foco em consentimento, auditoria e segurança.
+                Entregamos um mapa de filas, tempo médio por serviço e um plano de ação por secretaria para melhorar resultados rapidamente.
             </p>
             <div class="hero-ctas">
-                <a href="#pilares" class="btn-primary">Ver pilares LGPD <span>→</span></a>
-                <a href="/contato/" class="btn-secondary">Solicitar demonstração <span>→</span></a>
+                <a href="#formulario" class="btn-primary">
+                    Agendar diagnóstico com especialista
+                    <span>→</span>
+                </a>
+                <a href="/como-funciona/" class="btn-secondary">
+                    Ver o sistema funcionando agora
+                    <span>→</span>
+                </a>
+            </div>
+            <div class="hero-lgpd">
+                <strong>Resposta rápida:</strong> retornamos em até 1 dia útil com diagnóstico e próximas etapas.
             </div>
         </div>
         <div class="hero-visual">
-            <div class="stats-heading">Pontos críticos</div>
+            <div class="stats-heading">O que você recebe</div>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">Consent.</div>
-                    <div class="stat-label">Por finalidade</div>
+                    <div class="stat-value">Diagnóstico</div>
+                    <div class="stat-label">Mapa de filas e gargalos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">Logs</div>
-                    <div class="stat-label">Registro de acesso</div>
+                    <div class="stat-value">Plano</div>
+                    <div class="stat-label">Etapas de implantação</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">Auditoria</div>
-                    <div class="stat-label">Rastreabilidade total</div>
+                    <div class="stat-value">Indicadores</div>
+                    <div class="stat-label">KPIs para gestão</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">Controle</div>
-                    <div class="stat-label">Dados do cidadão</div>
+                    <div class="stat-value">LGPD</div>
+                    <div class="stat-label">Adequação e auditoria</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Suporte</div>
+                    <div class="stat-label">Equipe especializada</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Escala</div>
+                    <div class="stat-label">Expansão por unidades</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="tech-stack" id="pilares">
+    <section class="results" id="vantagens">
         <div class="container">
             <div class="section-header fade-in-up">
-                <div class="section-tag">● PILARES LGPD</div>
-                <h2 class="section-title">Segurança e conformidade no atendimento público</h2>
-                <p class="section-description" style="color: rgba(255,255,255,0.8);">
-                    Estruture a LGPD com processos claros e rastreabilidade completa.
-                </p>                <p class="section-description" style="color: rgba(255,255,255,0.8);">
-                    O CPF é utilizado de forma responsável apenas para facilitar o atendimento, respeitando consentimento,
-                    finalidade e segurança dos dados.
+                <div class="section-tag">● O QUE VOCÊ RECEBE</div>
+                <h2 class="section-title">Diagnóstico com foco em impacto político e operacional</h2>
+                <p class="section-description">
+                    Menos reclamações, mais transparência e um plano objetivo para reduzir filas.
                 </p>
             </div>
 
-            <div class="tech-grid">
-                <div class="tech-item fade-in-up">
-                    <div class="tech-name">Consentimento por finalidade</div>
-                    <div class="tech-version">Transparência na coleta</div>
+            <div class="results-grid">
+                <div class="result-card fade-in-up">
+                    <div class="result-title">Diagnóstico gratuito</div>
+                    <p class="result-text">Mapeamos gargalos, horários de pico e causas das filas.</p>
                 </div>
-                <div class="tech-item fade-in-up">
-                    <div class="tech-name">Registro de acesso</div>
-                    <div class="tech-version">Logs completos por usuário</div>
+                <div class="result-card fade-in-up">
+                    <div class="result-title">Plano por secretaria</div>
+                    <p class="result-text">Ações rápidas com metas e indicadores por serviço.</p>
                 </div>
-                <div class="tech-item fade-in-up">
-                    <div class="tech-name">Anonimização</div>
-                    <div class="tech-version">Controle pelo cidadão</div>
+                <div class="result-card fade-in-up">
+                    <div class="result-title">Relatórios objetivos</div>
+                    <p class="result-text">Tempo médio, ranking por unidade e produtividade.</p>
                 </div>
-                <div class="tech-item fade-in-up">
-                    <div class="tech-name">Auditoria completa</div>
-                    <div class="tech-version">Quem fez, quando e por quê</div>
-                </div>
-                <div class="tech-item fade-in-up">
-                    <div class="tech-name">Compartilhamento seguro</div>
-                    <div class="tech-version">Entre secretarias com controle</div>
+                <div class="result-card fade-in-up">
+                    <div class="result-title">Transparência e LGPD</div>
+                    <p class="result-text">Governança de dados com auditoria e rastreabilidade.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="steps">
-        <div class="container">
-            <div class="section-header fade-in-up">
-                <div class="section-tag">● PASSO A PASSO</div>
-                <h2 class="section-title">Como estruturar a adequação</h2>
-                <p class="section-description">Um caminho simples para garantir conformidade contínua.</p>
-            </div>
-
-            <div class="steps-grid">
-                <div class="step-card fade-in-up">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Mapear dados coletados</h3>
-                    <p class="step-text">Inventário por secretaria e serviço.</p>
+    <section class="cta-section" id="formulario">
+        <div class="cta-content">
+            <h2>Vamos transformar o atendimento da sua prefeitura</h2>
+            <p>Preencha o formulário e receba um diagnóstico gratuito com um especialista do SIGFILA.</p>
+            <form class="cta-form" onsubmit="return handleSubmit(event)">
+                <label class="sr-only" for="cta-name">Nome</label>
+                <input id="cta-name" name="name" type="text" class="cta-input" placeholder="Seu nome" autocomplete="name" required>
+                <label class="sr-only" for="cta-email">Email</label>
+                <input id="cta-email" name="email" type="email" class="cta-input" placeholder="Seu email" autocomplete="email" required>
+                <label class="sr-only" for="cta-phone">Telefone</label>
+                <input id="cta-phone" name="phone" type="tel" class="cta-input" placeholder="Seu telefone" autocomplete="tel" required>
+                <label class="sr-only" for="cta-city">Cidade/Prefeitura</label>
+                <input id="cta-city" name="city" type="text" class="cta-input" placeholder="Cidade ou prefeitura" autocomplete="organization" required>
+                <label class="sr-only" for="cta-message">Mensagem</label>
+                <textarea id="cta-message" name="message" class="cta-input cta-textarea full" placeholder="Conte o que você precisa" rows="4"></textarea>
+                <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off">
+                <div class="cta-actions full">
+                    <button type="submit" class="cta-button">Agendar diagnóstico com especialista</button>
+                    <a href="/sistema-de-filas/" class="cta-link">Conhecer o sistema</a>
                 </div>
-                <div class="step-card fade-in-up">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Definir base legal</h3>
-                    <p class="step-text">Consentimento e finalidade por processo.</p>
-                </div>
-                <div class="step-card fade-in-up">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Registrar acessos</h3>
-                    <p class="step-text">Logs automáticos e auditoria.</p>
-                </div>
-                <div class="step-card fade-in-up">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Garantir direitos do cidadão</h3>
-                    <p class="step-text">Atualização e anonimização de dados.</p>
-                </div>
-                <div class="step-card fade-in-up">
-                    <div class="step-number">5</div>
-                    <h3 class="step-title">Treinar equipes</h3>
-                    <p class="step-text">Padronização de processos.</p>
-                </div>
-                <div class="step-card fade-in-up">
-                    <div class="step-number">6</div>
-                    <h3 class="step-title">Monitorar conformidade</h3>
-                    <p class="step-text">Relatórios regulares e melhoria contínua.</p>
-                </div>
-            </div>
+            </form>
+            <div class="form-message" role="status" aria-live="polite"></div>
         </div>
     </section>
-
-<section class="cta-section" id="contato">
-    <div class="cta-content fade-in-up">
-        <h2>Vamos transformar o atendimento<br>da sua prefeitura</h2>
-        <p>Solicite uma demonstração e receba um diagnóstico gratuito com um especialista do SIGFILA.</p>
-        <form class="cta-form" onsubmit="return handleSubmit(event)">
-            <label class="sr-only" for="cta-name">Nome</label>
-            <input id="cta-name" name="name" type="text" class="cta-input" placeholder="Seu nome" autocomplete="name" required>
-            <label class="sr-only" for="cta-email">E-mail</label>
-            <input id="cta-email" name="email" type="email" class="cta-input" placeholder="seu-email@prefeitura.gov.br" autocomplete="email" required>
-            <label class="sr-only" for="cta-phone">Telefone</label>
-            <input id="cta-phone" name="phone" type="tel" class="cta-input" placeholder="Telefone/WhatsApp" autocomplete="tel" required>
-            <label class="sr-only" for="cta-city">Município</label>
-            <input id="cta-city" name="city" type="text" class="cta-input" placeholder="Município" autocomplete="address-level2" required>
-            <label class="sr-only" for="cta-message">Mensagem</label>
-            <textarea id="cta-message" name="message" class="cta-input cta-textarea full" placeholder="Conte um pouco sobre o desafio da sua prefeitura" required></textarea>
-            <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <div class="cta-actions full">
-                <button type="submit" class="cta-button">Solicitar demonstração</button>
-                <a href="/contato/" class="cta-link">Falar com especialista</a>
-            </div>
-        </form>
-        <div class="form-message" role="status" aria-live="polite"></div>
-    </div>
-</section>
 </main>
-<footer>
-    <div class="footer-content">
-        <div class="footer-brand">
-            <div class="footer-logo">SIGFILA</div>
-            <p class="footer-tagline">
-                Sistema Inteligente de Gestão de Filas. Transformando atendimento público em dados estratégicos desde 2026.
-            </p>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">SIGFILA</div>
+                <p class="footer-tagline">
+                    Sistema Inteligente de Gestão de Filas. Transformando atendimento público em dados estratégicos desde 2026.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Produto</h4>
+                <ul class="footer-links">
+                    <li><a href="/sistema-de-filas/">Sistema de Filas</a></li>
+                    <li><a href="/como-funciona/">Como Funciona</a></li>
+                    <li><a href="/indicadores/">Indicadores</a></li>
+                    <li><a href="/lgpd/">LGPD</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Conteúdo</h4>
+                <ul class="footer-links">
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/como-reduzir-filas/">Como reduzir filas</a></li>
+                    <li><a href="/lgpd-prefeituras/">LGPD nas prefeituras</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Contato</h4>
+                <ul class="footer-links">
+                    <li><a href="/contato/">Fale conosco</a></li>
+                    <li><a href="/diagnostico/">Agendar diagnóstico</a></li>
+                    <li><a href="/indicadores/">Indicadores</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div>
-            <h4 class="footer-title">Produto</h4>
-            <ul class="footer-links">
-                <li><a href="/sistema-de-filas/">Sistema de Filas</a></li>
-                <li><a href="/como-funciona/">Como Funciona</a></li>
-                <li><a href="/indicadores/">Indicadores</a></li>
-                <li><a href="/lgpd/">LGPD</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <div>© 2026 SIGFILA. Todos os direitos reservados.</div>
+            <div class="mono">por Marcos Matos</div>
         </div>
+    </footer>
 
-        <div>
-            <h4 class="footer-title">Conteúdo</h4>
-            <ul class="footer-links">
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/como-reduzir-filas/">Como reduzir filas</a></li>
-                <li><a href="/lgpd-prefeituras/">LGPD nas prefeituras</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class="footer-title">Contato</h4>
-            <ul class="footer-links">
-                <li><a href="/contato/">Fale conosco</a></li>
-                <li><a href="/contato/">Solicitar demonstração</a></li>
-                <li><a href="/indicadores/">Indicadores</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div>© 2026 SIGFILA. Todos os direitos reservados.</div>
-        <div class="mono">por Marcos Matos</div>
-    </div>
-</footer>
-<script>
-
+    <script>
         // Scroll Animations
         const observerOptions = {
             threshold: 0.1,
@@ -1806,7 +1776,7 @@
                 if (message) {
                     const nowText = new Date().toLocaleString('pt-BR');
                     const nameText = name ? `, ${name}` : '';
-                    message.textContent = `Obrigado${nameText}! Recebemos sua solicitação em ${nowText}. Entraremos em contato em ${email} em breve para a demonstração do SIGFILA.`;
+                    message.textContent = `Obrigado${nameText}! Recebemos sua solicitação em ${nowText}. Entraremos em contato em ${email} em breve para o diagnóstico do SIGFILA.`;
                 }
                 e.target.reset();
             } catch (err) {
@@ -1869,19 +1839,9 @@
                 link.addEventListener('click', closeNav);
             });
         }
-    
-</script>
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 
 

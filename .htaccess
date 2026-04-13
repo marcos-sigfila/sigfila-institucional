@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Force HTTPS + non-www
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.sigfila\.com\.br$ [NC]
+RewriteRule ^(.*)$ https://sigfila.com.br/$1 [L,R=301]
+
+# Old URLs -> new SEO URLs
+RewriteRule ^solucao/?$ /sistema-de-filas/ [L,R=301]
+RewriteRule ^transparencia/?$ /indicadores/ [L,R=301]

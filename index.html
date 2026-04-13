@@ -1,10 +1,10 @@
-?<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Gestão de Filas para Prefeituras | SIGFILA</title>
-    <meta name="description" content="Sistema de gestão de filas para prefeituras com acompanhamento em tempo real, transparência e dados para decisões estratégicas.">
+    <meta name="description" content="Sistema de filas para prefeitura com relatórios por secretaria, tempo médio de espera por serviço e LGPD no atendimento público.">
     <link rel="canonical" href="https://sigfila.com.br/">
     <link rel="icon" type="image/x-icon" href="/sigfila.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,27 +127,44 @@
             text-transform: uppercase;
         }
 
-        .nav-links {
+                .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 320px;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 5.5rem 2rem 2rem;
             display: flex;
+            flex-direction: column;
             gap: 1.25rem;
-            align-items: center;
+            align-items: flex-start;
+            transform: translateX(100%);
+            transition: transform 0.35s ease;
+            z-index: 1100;
+            box-shadow: -12px 0 32px rgba(15, 23, 42, 0.35);
+        }
+
+        .nav-links.open {
+            transform: translateX(0);
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-secondary);
+            color: #e2e8f0;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: color 0.3s;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: var(--cyan);
+            color: #38bdf8;
         }
 
         .nav-links a.active {
-            color: var(--cyan);
+            color: #38bdf8;
             font-weight: 600;
         }
 
@@ -158,16 +175,61 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -6px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--cyan);
+            background: #38bdf8;
             transition: width 0.3s;
         }
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        .nav-links .btn-demo {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+
+        .nav-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            border: 1px solid rgba(226, 232, 240, 0.35);
+            background: transparent;
+            color: #e2e8f0;
+            border-radius: 10px;
+            width: 42px;
+            height: 42px;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .nav-close:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.55);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+            z-index: 1050;
+        }
+
+        .nav-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        body.nav-open {
+            overflow: hidden;
         }
 
         .btn-demo {
@@ -189,12 +251,14 @@
         }
 
         .nav-toggle {
-            display: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
             border: 1px solid var(--border);
             background: white;
             color: var(--text-primary);
-            padding: 0.5rem 0.75rem;
-            border-radius: 8px;
+            padding: 0.6rem 0.85rem;
+            border-radius: 999px;
             font-weight: 600;
             cursor: pointer;
         }
@@ -202,6 +266,20 @@
         .nav-toggle:hover {
             border-color: var(--cyan);
             color: var(--cyan);
+        }
+
+        .nav-toggle-icon {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-toggle-icon span {
+            width: 18px;
+            height: 2px;
+            background: currentColor;
+            display: block;
+            border-radius: 999px;
         }
 
         /* Hero Section */
@@ -1362,28 +1440,9 @@
                 gap: 2rem;
             }
 
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 72px;
-                right: 2rem;
-                background: white;
-                border: 1px solid var(--border);
-                border-radius: 12px;
-                padding: 1rem;
-                flex-direction: column;
-                gap: 0.75rem;
-                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-            }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .nav-toggle {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
+                        .nav-links {
+                width: 100%;
+                padding-top: 5rem;
             }
         }
 
@@ -1448,18 +1507,26 @@
         <img src="/logo.png" alt="SIGFILA Logo" class="logo-mark" width="250" height="58">
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-        Menu
+        <span class="nav-toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="nav-toggle-label">Menu</span>
     </button>
     <div class="nav-links" id="primary-navigation">
+        <button class="nav-close" type="button" aria-label="Fechar menu">×</button>
         <a href="/" class="active">Início</a>
-        <a href="/solucao/">Solução</a>
+        <a href="/sistema-de-filas/">Sistema de Filas</a>
         <a href="/como-funciona/">Como Funciona</a>
         <a href="/lgpd/">LGPD</a>
-        <a href="/transparencia/">Transparência</a>
+        <a href="/indicadores/">Indicadores</a>
         <a href="/blog/">Blog</a>
-        <a href="/contato/" class="btn-demo">Contato</a>
+        <a href="/contato/">Contato</a>
+        <a href="/diagnostico/" class="btn-demo">Diagnóstico</a>
     </div>
 </nav>
+    <div class="nav-overlay" data-nav-overlay></div>
     </header>
 
     <main>
@@ -1471,24 +1538,24 @@
                 <span>Plataforma SIGFILA • Gestão inteligente de filas</span>
             </div>
             <h1>
-                Sistema inteligente de gestão de filas e <span class="gradient-text">atendimento público</span>
+                Reduza filas e transforme o atendimento público em <span class="gradient-text">dados estratégicos</span>
             </h1>
             <p class="hero-description">
-                Reduza filas, melhore o atendimento e transforme dados em decisões estratégicas na gestão pública.
+                Relatórios por secretaria, tempo médio de espera por serviço e ranking de atendimento por unidade para decisões rápidas.
             </p>
             <div class="hero-ctas">
-                <a href="/contato/" class="btn-primary">
-                    Solicitar demonstração
+                <a href="/diagnostico/" class="btn-primary">
+                    Agendar demonstração com especialista
                     <span>→</span>
                 </a>
-                <a href="/contato/" class="btn-secondary">
-                    Receber diagnóstico gratuito
+                <a href="/como-funciona/" class="btn-secondary">
+                    Ver o sistema funcionando agora
                     <span>→</span>
                 </a>
             </div>
             <div class="hero-lgpd">
-                <strong>LGPD em foco:</strong> O SIGFILA também atua como uma solução estratégica para adequação à Lei Geral
-                de Proteção de Dados, permitindo gestão de consentimento, auditoria e controle de dados pessoais.
+                <strong>LGPD na prática para prefeituras:</strong> base legal, consentimento, auditoria e rastreabilidade de acessos
+                para proteger dados pessoais.
             </div>
         </div>
         <div class="hero-visual">
@@ -1527,31 +1594,29 @@
         <div class="container">
             <div class="section-header fade-in-up">
                 <div class="section-tag">● APRESENTAÇÃO</div>
-                <h2 class="section-title">O SIGFILA moderniza o atendimento público</h2>
+                <h2 class="section-title">Prefeituras sofrem com filas, reclamações e falta de dados</h2>
                 <p class="section-description">
-                    Uma plataforma completa para transformar filas em inteligência de gestão, com dados claros e decisões rápidas.
+                    O SIGFILA entrega controle em tempo real, transparência e indicadores claros para reduzir pressão política e melhorar a imagem pública.
                 </p>
             </div>
 
             <div class="live-grid">
                 <div class="live-copy fade-in-up">
-                    <h3 class="live-title">Gestão completa de filas e atendimento</h3>
+                    <h3 class="live-title">Gestão completa de filas e atendimento público</h3>
                     <p class="live-text">
-                        O SIGFILA é uma plataforma completa de gestão de filas e atendimento público desenvolvida para modernizar
-                        o funcionamento de prefeituras e órgãos públicos.
+                        O SIGFILA é um sistema de filas para prefeitura que organiza o atendimento físico e digital com dados por secretaria.
                     </p>
                     <p class="live-text">
-                        Mais do que organizar filas, o sistema transforma o fluxo de atendimento em inteligência de gestão,
-                        oferecendo dados em tempo real, indicadores de desempenho e ferramentas para tomada de decisão.
+                        Mais do que organizar filas, o sistema entrega relatórios por unidade, tempo médio por serviço e ranking de atendimento.
                     </p>
                     <ul class="live-benefits">
-                        <li>Dados em tempo real para decisões rápidas</li>
-                        <li>Indicadores de desempenho por serviço</li>
-                        <li>Controle de tempo de espera e prioridades</li>
-                        <li>Integração entre secretarias e unidades</li>
+                        <li>Relatórios por secretaria e unidade</li>
+                        <li>Tempo médio de espera por serviço</li>
+                        <li>Ranking de atendimento por unidade</li>
+                        <li>Controle de prioridades e filas em tempo real</li>
                     </ul>
                     <a href="/contato/" class="btn-secondary">
-                        Solicitar demonstração
+                        Agendar demonstração com especialista
                         <span>→</span>
                     </a>
                 </div>
@@ -1771,12 +1836,12 @@
                 </div>
                 <div class="step-card fade-in-up">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">Recebe QR Code</h3>
+                    <h3 class="step-title">Recebe um QR Code</h3>
                     <p class="step-text">Código para acompanhar a fila com transparência.</p>
                 </div>
                 <div class="step-card fade-in-up">
                     <div class="step-number">3</div>
-                    <h3 class="step-title">Acompanha pelo celular</h3>
+                    <h3 class="step-title">Acompanha a fila pelo celular</h3>
                     <p class="step-text">Visualiza sua posição e tempo de espera estimado.</p>
                 </div>
                 <div class="step-card fade-in-up">
@@ -1808,10 +1873,10 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-tag">● LGPD</div>
-                <h2 class="section-title">Adequação à LGPD para o setor público</h2>
+                <h2 class="section-title">LGPD na prática para prefeituras</h2>
                 <p class="section-description" style="color: rgba(255,255,255,0.8);">
-                    O SIGFILA permite a coleta e gestão de dados pessoais de forma estruturada e segura, com base legal e
-                    rastreabilidade completa.
+                    O SIGFILA permite a coleta e gestão de dados pessoais de forma estruturada e segura, com base legal,
+                    rastreabilidade completa e auditoria por usuário.
                 </p>
                 <p class="section-description" style="color: rgba(255,255,255,0.8);">
                     O CPF é utilizado de forma responsável apenas para facilitar o atendimento, respeitando consentimento,
@@ -1869,11 +1934,11 @@
                 <div class="comparison-card fade-in-up">
                     <h3 class="comparison-title">Para a gestão pública</h3>
                     <ul class="comparison-list">                        
-						<li>Distribuição de cidadãos ao longo do dia</li>
-                        <li>Redução de filas</li>
-						<li>Dados para tomada de decisão</li>
-                        <li>Aumento da eficiência</li>
-                        <li>Monitoramento de desempenho</li>                        
+						<li>Relatórios por secretaria e unidade</li>
+                        <li>Tempo médio de espera por serviço</li>
+						<li>Ranking de atendimento por unidade</li>
+                        <li>Picos de demanda e alocação de equipes</li>
+                        <li>Indicadores de satisfação por serviço</li>                        
                     </ul>
                 </div>
             </div>
@@ -1912,8 +1977,8 @@
             </div>
 
             <div class="results-cta">
-                <a href="/contato/" class="btn-primary">
-                    Solicitar demonstração
+                <a href="/diagnostico/" class="btn-primary">
+                    Agendar demonstração com especialista
                     <span>→</span>
                 </a>
             </div>
@@ -1923,8 +1988,8 @@
     <!-- CTA Section -->
     <section class="cta-section" id="contato">
         <div class="cta-content">
-            <h2>Vamos transformar o atendimento<br>da sua prefeitura</h2>
-            <p>Solicite uma demonstração e receba um diagnóstico gratuito com um especialista do SIGFILA.</p>
+            <h2>Reduza filas e recupere o controle<br>do atendimento da sua prefeitura</h2>
+            <p>Agende uma demonstração e receba um diagnóstico gratuito com um especialista do SIGFILA.</p>
             <form class="cta-form" onsubmit="return handleSubmit(event)">
                 <label class="sr-only" for="cta-name">Nome</label>
                 <input id="cta-name" name="name" type="text" class="cta-input" placeholder="Seu nome" autocomplete="name" required>
@@ -1938,8 +2003,8 @@
                 <textarea id="cta-message" name="message" class="cta-input cta-textarea full" placeholder="Conte um pouco sobre o desafio da sua prefeitura" required></textarea>
                 <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="cta-actions full">
-                    <button type="submit" class="cta-button">Solicitar demonstração</button>
-                    <a href="/contato/" class="cta-link">Falar com especialista</a>
+                    <button type="submit" class="cta-button">Agendar demonstração com especialista</button>
+                    <a href="/contato/" class="cta-link">Receber diagnóstico gratuito</a>
                 </div>
             </form>
             <div class="form-message" role="status" aria-live="polite"></div>
@@ -1960,9 +2025,9 @@
             <div>
                 <h4 class="footer-title">Produto</h4>
                 <ul class="footer-links">
-                    <li><a href="/solucao/">Solução</a></li>
+                    <li><a href="/sistema-de-filas/">Sistema de Filas</a></li>
                     <li><a href="/como-funciona/">Como Funciona</a></li>
-                    <li><a href="/transparencia/">Transparência</a></li>
+                    <li><a href="/indicadores/">Indicadores</a></li>
                     <li><a href="/lgpd/">LGPD</a></li>
                 </ul>
             </div>
@@ -1981,7 +2046,7 @@
                 <ul class="footer-links">
                     <li><a href="/contato/">Fale conosco</a></li>
                     <li><a href="/contato/">Solicitar demonstração</a></li>
-                    <li><a href="/transparencia/">Transparência</a></li>
+                    <li><a href="/indicadores/">Indicadores</a></li>
                 </ul>
             </div>
         </div>
@@ -2110,28 +2175,58 @@
             }
         });
 
-        // Mobile Nav Toggle
+                // Menu Drawer
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const navClose = document.querySelector('.nav-close');
+        const body = document.body;
+
+        const closeNav = () => {
+            if (navLinks) navLinks.classList.remove('open');
+            if (navOverlay) navOverlay.classList.remove('open');
+            if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+            body.classList.remove('nav-open');
+        };
 
         if (navToggle && navLinks) {
             navToggle.addEventListener('click', () => {
                 const isOpen = navLinks.classList.toggle('open');
+                if (navOverlay) navOverlay.classList.toggle('open', isOpen);
                 navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                body.classList.toggle('nav-open', isOpen);
             });
 
-            navLinks.querySelectorAll('a[href^="#"]').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navLinks.classList.contains('open')) {
-                        navLinks.classList.remove('open');
-                        navToggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
+            if (navOverlay) {
+                navOverlay.addEventListener('click', closeNav);
+            }
+
+            if (navClose) {
+                navClose.addEventListener('click', closeNav);
+            }
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeNav);
             });
         }
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,11 +1,12 @@
-?<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soluçãoo de Gestão de Filas para Prefeituras | SIGFILA</title>
+    <title>Solução de Gestão de Filas para Prefeituras | SIGFILA</title>
     <meta name="description" content="Conheça a solução SIGFILA: fila híbrida, painéis em tempo real e dados estratégicos para prefeituras.">
-    <link rel="canonical" href="https://sigfila.com.br/solucao/">
+    <link rel="canonical" href="https://sigfila.com.br/sistema-de-filas/">
+    <meta http-equiv="refresh" content="0; url=https://sigfila.com.br/sistema-de-filas/">
     <link rel="icon" type="image/x-icon" href="/sigfila.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,27 +128,44 @@
             text-transform: uppercase;
         }
 
-        .nav-links {
+                .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 320px;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 5.5rem 2rem 2rem;
             display: flex;
+            flex-direction: column;
             gap: 1.25rem;
-            align-items: center;
+            align-items: flex-start;
+            transform: translateX(100%);
+            transition: transform 0.35s ease;
+            z-index: 1100;
+            box-shadow: -12px 0 32px rgba(15, 23, 42, 0.35);
+        }
+
+        .nav-links.open {
+            transform: translateX(0);
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-secondary);
+            color: #e2e8f0;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: color 0.3s;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: var(--cyan);
+            color: #38bdf8;
         }
 
         .nav-links a.active {
-            color: var(--cyan);
+            color: #38bdf8;
             font-weight: 600;
         }
 
@@ -158,16 +176,61 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -6px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--cyan);
+            background: #38bdf8;
             transition: width 0.3s;
         }
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        .nav-links .btn-demo {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+
+        .nav-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            border: 1px solid rgba(226, 232, 240, 0.35);
+            background: transparent;
+            color: #e2e8f0;
+            border-radius: 10px;
+            width: 42px;
+            height: 42px;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .nav-close:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.55);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+            z-index: 1050;
+        }
+
+        .nav-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        body.nav-open {
+            overflow: hidden;
         }
 
         .btn-demo {
@@ -189,12 +252,14 @@
         }
 
         .nav-toggle {
-            display: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
             border: 1px solid var(--border);
             background: white;
             color: var(--text-primary);
-            padding: 0.5rem 0.75rem;
-            border-radius: 8px;
+            padding: 0.6rem 0.85rem;
+            border-radius: 999px;
             font-weight: 600;
             cursor: pointer;
         }
@@ -202,6 +267,20 @@
         .nav-toggle:hover {
             border-color: var(--cyan);
             color: var(--cyan);
+        }
+
+        .nav-toggle-icon {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-toggle-icon span {
+            width: 18px;
+            height: 2px;
+            background: currentColor;
+            display: block;
+            border-radius: 999px;
         }
 
         /* Hero Section */
@@ -1362,28 +1441,9 @@
                 gap: 2rem;
             }
 
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 72px;
-                right: 2rem;
-                background: white;
-                border: 1px solid var(--border);
-                border-radius: 12px;
-                padding: 1rem;
-                flex-direction: column;
-                gap: 0.75rem;
-                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-            }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .nav-toggle {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
+                        .nav-links {
+                width: 100%;
+                padding-top: 5rem;
             }
         }
 
@@ -1448,18 +1508,26 @@
         <img src="/logo.png" alt="SIGFILA Logo" class="logo-mark" width="250" height="58">
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-        Menu
+        <span class="nav-toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="nav-toggle-label">Menu</span>
     </button>
     <div class="nav-links" id="primary-navigation">
+        <button class="nav-close" type="button" aria-label="Fechar menu">×</button>
         <a href="/">Início</a>
-        <a href="/solucao/" class="active">Solução</a>
+        <a href="/sistema-de-filas/" class="active">Sistema de Filas</a>
         <a href="/como-funciona/">Como Funciona</a>
         <a href="/lgpd/">LGPD</a>
-        <a href="/transparencia/">Transparência</a>
+        <a href="/indicadores/">Indicadores</a>
         <a href="/blog/">Blog</a>
-        <a href="/contato/" class="btn-demo">Contato</a>
+        <a href="/contato/">Contato</a>
+        <a href="/diagnostico/" class="btn-demo">Diagnóstico</a>
     </div>
 </nav>
+    <div class="nav-overlay" data-nav-overlay></div>
     </header>
 
     <main>
@@ -1476,11 +1544,11 @@
             <div class="hero-ctas">
                 <a href="/contato/" class="btn-primary">
                     Solicitar demonstração
-                    <span>?</span>
+                    <span>→</span>
                 </a>
                 <a href="/como-funciona/" class="btn-secondary">
                     Ver como funciona
-                    <span>?</span>
+                    <span>→</span>
                 </a>
             </div>
             <div class="hero-lgpd">
@@ -1521,7 +1589,7 @@
     <section class="live-section" id="visao-geral">
         <div class="container">
             <div class="section-header fade-in-up">
-                <div class="section-tag">? VISÃO GERAL</div>
+                <div class="section-tag">● VISÃO GERAL</div>
                 <h2 class="section-title">Do atendimento ao insight de gestão</h2>
                 <p class="section-description">
                     O SIGFILA organiza o atendimento e transforma a operação diária em dados estratégicos para decisões rápidas.
@@ -1545,7 +1613,7 @@
                     </ul>
                     <a href="/contato/" class="btn-secondary">
                         Solicitar demonstração
-                        <span>?</span>
+                        <span>→</span>
                     </a>
                 </div>
 
@@ -1598,7 +1666,7 @@
     <section class="features" id="recursos">
         <div class="container">
             <div class="section-header fade-in-up">
-                <div class="section-tag">? SOLUÇÃO</div>
+                <div class="section-tag">● SOLUÇÃO</div>
                 <h2 class="section-title">Uma plataforma completa para gestão de atendimento público</h2>
                 <p class="section-description">
                     O SIGFILA centraliza e organiza todo o fluxo de atendimento, permitindo controle total sobre filas, tempo de espera e desempenho.
@@ -1652,7 +1720,7 @@
     <section class="comparison" id="beneficios">
         <div class="container">
             <div class="section-header fade-in-up">
-                <div class="section-tag">? BENEFÍCIOS</div>
+                <div class="section-tag">● BENEFÍCIOS</div>
                 <h2 class="section-title">Benefícios para cidadão e gestão pública</h2>
                 <p class="section-description">
                     Menos filas para o cidadão e mais controle para a administração pública.
@@ -1687,7 +1755,7 @@
     <section class="results" id="para-prefeituras">
         <div class="container">
             <div class="section-header fade-in-up">
-                <div class="section-tag">? PARA PREFEITURAS</div>
+                <div class="section-tag">● PARA PREFEITURAS</div>
                 <h2 class="section-title">Transformação digital no atendimento público</h2>
                 <p class="section-description">
                     O SIGFILA foi desenvolvido para atender às necessidades específicas de prefeituras, com implantação rápida e visão integrada.
@@ -1716,7 +1784,7 @@
             <div class="results-cta">
                 <a href="/contato/" class="btn-primary">
                     Solicitar demonstração
-                    <span>?</span>
+                    <span>→</span>
                 </a>
             </div>
         </div>
@@ -1729,11 +1797,11 @@
             <div class="hero-ctas">
                 <a href="/contato/" class="btn-primary">
                     Agendar demonstração
-                    <span>?</span>
+                    <span>→</span>
                 </a>
-                <a href="/transparencia/" class="btn-secondary">
+                <a href="/indicadores/" class="btn-secondary">
                     Ver transparência
-                    <span>?</span>
+                    <span>→</span>
                 </a>
             </div>
         </div>
@@ -1753,9 +1821,9 @@
             <div>
                 <h4 class="footer-title">Produto</h4>
                 <ul class="footer-links">
-                    <li><a href="/solucao/">Solução</a></li>
+                    <li><a href="/sistema-de-filas/">Sistema de Filas</a></li>
                     <li><a href="/como-funciona/">Como Funciona</a></li>
-                    <li><a href="/transparencia/">Transparência</a></li>
+                    <li><a href="/indicadores/">Indicadores</a></li>
                     <li><a href="/lgpd/">LGPD</a></li>
                 </ul>
             </div>
@@ -1774,7 +1842,7 @@
                 <ul class="footer-links">
                     <li><a href="/contato/">Fale conosco</a></li>
                     <li><a href="/contato/">Solicitar demonstração</a></li>
-                    <li><a href="/transparencia/">Transparência</a></li>
+                    <li><a href="/indicadores/">Indicadores</a></li>
                 </ul>
             </div>
         </div>
@@ -1903,28 +1971,50 @@
             }
         });
 
-        // Mobile Nav Toggle
+                // Menu Drawer
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const navClose = document.querySelector('.nav-close');
+        const body = document.body;
+
+        const closeNav = () => {
+            if (navLinks) navLinks.classList.remove('open');
+            if (navOverlay) navOverlay.classList.remove('open');
+            if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+            body.classList.remove('nav-open');
+        };
 
         if (navToggle && navLinks) {
             navToggle.addEventListener('click', () => {
                 const isOpen = navLinks.classList.toggle('open');
+                if (navOverlay) navOverlay.classList.toggle('open', isOpen);
                 navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                body.classList.toggle('nav-open', isOpen);
             });
 
-            navLinks.querySelectorAll('a[href^="#"]').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navLinks.classList.contains('open')) {
-                        navLinks.classList.remove('open');
-                        navToggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
+            if (navOverlay) {
+                navOverlay.addEventListener('click', closeNav);
+            }
+
+            if (navClose) {
+                navClose.addEventListener('click', closeNav);
+            }
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeNav);
             });
         }
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
