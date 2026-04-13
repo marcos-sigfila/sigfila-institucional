@@ -54,4 +54,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-</urlset>
+  <url>
+    <loc>https://sigfila.com.br/para-prefeitos/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://sigfila.com.br/para-secretarios/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://sigfila.com.br/para-atendimento/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url></urlset>
+
