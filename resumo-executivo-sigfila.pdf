@@ -1,0 +1,148 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 2821 >>
+stream
+BT
+/F1 22 Tf
+72 770 Td
+(SIGFILA - Resumo Executivo) Tj
+/F1 10 Tf
+0 -22 Td
+(GovTech para atendimento público, filas e LGPD) Tj
+0 -15 Td
+(Atualizado em 05/05/2026) Tj
+0 -22 Td
+/F1 13 Tf
+(Visão geral) Tj
+/F1 9.5 Tf
+0 -13 Td
+(O SIGFILA transforma filas públicas em um processo digital, transparente, mensurável e) Tj
+0 -13 Td
+(centrado no cidadão.) Tj
+0 -5 Td
+0 -13 Td
+(A plataforma organiza totem, senha, guichê, display público, acompanhamento por QR Code,) Tj
+0 -13 Td
+(avaliação e indicadores.) Tj
+0 -5 Td
+0 -22 Td
+/F1 13 Tf
+(Problema) Tj
+/F1 9.5 Tf
+0 -13 Td
+(Prefeituras convivem com filas sem previsibilidade, cidadãos sem informação e gestores sem) Tj
+0 -13 Td
+(dados em tempo real.) Tj
+0 -5 Td
+0 -13 Td
+(Isso gera reclamações, pressão sobre servidores, dificuldade de priorizar equipes e baixa) Tj
+0 -13 Td
+(capacidade de melhoria contínua.) Tj
+0 -5 Td
+0 -22 Td
+/F1 13 Tf
+(Solução) Tj
+/F1 9.5 Tf
+0 -13 Td
+(O SIGFILA digitaliza a jornada presencial: emissão de senha, chamada em guichê, painel) Tj
+0 -13 Td
+(público, dashboards, relatórios e portal do cidadão.) Tj
+0 -5 Td
+0 -13 Td
+(A solução também inclui governança de dados pessoais, com bases legais configuráveis,) Tj
+0 -13 Td
+(controle de acesso, auditoria e rastreabilidade.) Tj
+0 -5 Td
+0 -22 Td
+/F1 13 Tf
+(Status do projeto) Tj
+/F1 9.5 Tf
+0 -13 Td
+(MVP funcional desenvolvido, site institucional publicado e módulos essenciais estruturados) Tj
+0 -13 Td
+(para demonstração e validação.) Tj
+0 -5 Td
+0 -13 Td
+(O projeto está em fase de coleta de feedbacks, preparação de piloto controlado e definição) Tj
+0 -13 Td
+(de métricas de impacto.) Tj
+0 -5 Td
+0 -22 Td
+/F1 13 Tf
+(Diferenciais) Tj
+/F1 9.5 Tf
+0 -13 Td
+(1. Atendimento em tempo real para cidadão, operador e gestor.) Tj
+0 -5 Td
+0 -13 Td
+(2. Gestão por dados de espera, demanda, ausências, produtividade e satisfação.) Tj
+0 -5 Td
+0 -13 Td
+(3. LGPD aplicada ao fluxo de atendimento público.) Tj
+0 -5 Td
+0 -13 Td
+(4. Arquitetura replicável por município, secretaria, unidade, serviço, guichê, totem e) Tj
+0 -13 Td
+(display.) Tj
+0 -5 Td
+0 -22 Td
+/F1 13 Tf
+(Mercado e modelo) Tj
+/F1 9.5 Tf
+0 -13 Td
+(Público-alvo: prefeituras, secretarias municipais, unidades de saúde, assistência social,) Tj
+0 -13 Td
+(Procon, protocolo e centros de atendimento.) Tj
+0 -5 Td
+0 -13 Td
+(Modelo: implantação inicial, mensalidade SaaS por porte da operação, pacotes por unidades e) Tj
+0 -13 Td
+(módulos adicionais.) Tj
+0 -5 Td
+0 -22 Td
+/F1 13 Tf
+(Roadmap) Tj
+/F1 9.5 Tf
+0 -13 Td
+(Agendamento, fila virtual, notificações, integração com gov.br, APIs municipais e) Tj
+0 -13 Td
+(inteligência operacional para previsão de demanda.) Tj
+0 -5 Td
+0 -22 Td
+/F1 13 Tf
+(Próxima etapa) Tj
+/F1 9.5 Tf
+0 -13 Td
+(Validar piloto com gestores públicos, medir impacto real e estruturar as primeiras propostas) Tj
+0 -13 Td
+(comerciais.) Tj
+0 -5 Td
+ET
+
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000338 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3211
+%%EOF
