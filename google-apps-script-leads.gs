@@ -19,6 +19,18 @@ const HEADERS = [
   'Nome',
   'Telefone/WhatsApp',
   'Cidade ou prefeitura',
+  'Órgão ou instituição',
+  'Tipo de instituição',
+  'Atendimentos por mês',
+  'Usa sistema de senhas',
+  'Tem relatórios de espera',
+  'Onde há mais fila',
+  'Quer demonstração',
+  'Aceita conversa 20 min',
+  'Interesse',
+  'Status',
+  'Próxima ação',
+  'Nível de interesse',
   'Mensagem',
   'Titulo da pagina',
   'Origem/Referenciador',
@@ -48,6 +60,18 @@ function doPost(e) {
       pick_(data, ['nome', 'name']),
       pick_(data, ['telefone', 'phone']),
       pick_(data, ['cidadePrefeitura', 'cidade', 'city', 'prefeitura']),
+      pick_(data, ['orgaoInstituicao', 'organization']),
+      pick_(data, ['tipoInstituicao', 'institutionType']),
+      pick_(data, ['atendimentosMes', 'monthlyVolume']),
+      pick_(data, ['usaSistemaSenhas', 'hasQueueSystem']),
+      pick_(data, ['possuiRelatoriosEspera', 'hasWaitReports']),
+      pick_(data, ['ondeHaMaisFila', 'worstQueue']),
+      pick_(data, ['querDemonstracao', 'wantsDemo']),
+      pick_(data, ['aceitaConversa20Min', 'acceptsCall']),
+      pick_(data, ['interesse']),
+      pick_(data, ['status']),
+      pick_(data, ['proximaAcao']),
+      pick_(data, ['nivelInteresse']),
       pick_(data, ['mensagem', 'message']),
       pick_(data, ['pageTitle']),
       pick_(data, ['origem', 'referrer']),
@@ -100,7 +124,7 @@ function parseQueryString_(body) {
 
 function getLeadsSheet_() {
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  return spreadsheet.getSheetByName(SHEET_NAME) || spreadsheet.getActiveSheet() || spreadsheet.insertSheet(SHEET_NAME);
+  return spreadsheet.getSheetByName(SHEET_NAME) || spreadsheet.insertSheet(SHEET_NAME);
 }
 
 function ensureHeaders_(sheet) {

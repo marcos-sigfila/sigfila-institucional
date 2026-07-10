@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitar Piloto do SIGFILA | Atendimento Público Municipal</title>
-    <meta name="description" content="Solicite uma proposta de piloto do SIGFILA para organizar filas, medir indicadores e validar atendimento presencial em órgãos públicos e operações de alto fluxo.">
+    <title>Diagnóstico Gratuito de Filas e Atendimento | SIGFILA</title>
+    <meta name="description" content="Preencha o diagnóstico gratuito do SIGFILA para mapear filas, indicadores, sistema atual, interesse em demonstração e potencial de piloto.">
     <link rel="canonical" href="https://sigfila.com.br/diagnostico/">
     <link rel="icon" type="image/x-icon" href="/sigfila.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1558,7 +1558,7 @@
         <a href="/para-atendimento/">Para Atendimento</a>
         <a href="/blog/">Blog</a>
         <a href="/contato/">Contato</a>
-        <a href="/diagnostico/" class="btn-demo active">Solicitar Piloto</a>
+        <a href="/diagnostico/" class="btn-demo active">Diagnóstico Gratuito</a>
     </div>
 </nav>
     <div class="nav-overlay" data-nav-overlay></div>
@@ -1569,16 +1569,16 @@
         <div class="hero-content">
             <div class="badge">
                 <span class="badge-dot"></span>
-                <span>Piloto comercial • Atendimento público</span>
+                <span>Diagnóstico gratuito • Atendimento presencial</span>
             </div>
-            <h1>Solicite um piloto do SIGFILA para provar resultado antes de <span class="gradient-text">expandir</span></h1>
+            <h1>Preencha o diagnóstico e descubra se sua operação está pronta para um <span class="gradient-text">piloto</span></h1>
             <p class="hero-description">
                 Comece com uma unidade, secretaria, setor ou serviço de maior demanda. O piloto mede tempo de espera, volume, gargalos,
                 satisfação e aderência da equipe ao fluxo digital.
             </p>
             <div class="hero-ctas">
                 <a href="#formulario" class="btn-primary">
-                    Solicitar proposta de piloto
+                    Preencher diagnóstico gratuito
                     <span>→</span>
                 </a>
                 <a href="/como-funciona/" class="btn-secondary">
@@ -1587,7 +1587,7 @@
                 </a>
             </div>
             <div class="hero-lgpd">
-                <strong>Próximo passo:</strong> entender a operação, escolher o escopo do piloto e definir os indicadores que serão acompanhados.
+                <strong>Próximo passo:</strong> entender a operação, identificar gargalos e avaliar se faz sentido propor uma demonstração ou piloto.
             </div>
         </div>
         <div class="hero-visual">
@@ -1654,8 +1654,8 @@
 
     <section class="cta-section" id="formulario">
         <div class="cta-content">
-            <h2>Vamos desenhar o primeiro piloto?</h2>
-            <p>Preencha o formulário e informe onde a fila mais impacta sua operação presencial.</p>
+            <h2>Diagnóstico gratuito de atendimento</h2>
+            <p>Preencha os campos abaixo para gerar evidência de demanda e receber um retorno sobre os próximos passos.</p>
             <form class="cta-form" onsubmit="return handleSubmit(event)">
                 <label class="sr-only" for="cta-name">Nome</label>
                 <input id="cta-name" name="name" type="text" class="cta-input" placeholder="Seu nome" autocomplete="name" required>
@@ -1663,13 +1663,66 @@
                 <input id="cta-email" name="email" type="email" class="cta-input" placeholder="Seu email" autocomplete="email" required>
                 <label class="sr-only" for="cta-phone">Telefone</label>
                 <input id="cta-phone" name="phone" type="tel" class="cta-input" placeholder="Seu telefone" autocomplete="tel" required>
-                <label class="sr-only" for="cta-city">Cidade/Prefeitura</label>
-                <input id="cta-city" name="city" type="text" class="cta-input" placeholder="Cidade ou prefeitura" autocomplete="organization" required>
+                <label class="sr-only" for="cta-organization">Órgão ou instituição</label>
+                <input id="cta-organization" name="organization" type="text" class="cta-input" placeholder="Órgão ou instituição" autocomplete="organization" required>
+                <label class="sr-only" for="cta-city">Município/Estado</label>
+                <input id="cta-city" name="city" type="text" class="cta-input" placeholder="Município/Estado" autocomplete="address-level2" required>
+                <label class="sr-only" for="cta-institution-type">Tipo de instituição</label>
+                <select id="cta-institution-type" name="institutionType" class="cta-input" required>
+                    <option value="">Tipo de instituição</option>
+                    <option value="Prefeitura">Prefeitura</option>
+                    <option value="Secretaria municipal">Secretaria municipal</option>
+                    <option value="Autarquia ou órgão público">Autarquia ou órgão público</option>
+                    <option value="Câmara de vereadores">Câmara de vereadores</option>
+                    <option value="Unidade de saúde ou hospital">Unidade de saúde ou hospital</option>
+                    <option value="Instituição de ensino">Instituição de ensino</option>
+                    <option value="Clínica ou empresa privada">Clínica ou empresa privada</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <label class="sr-only" for="cta-monthly-volume">Atendimentos por mês</label>
+                <select id="cta-monthly-volume" name="monthlyVolume" class="cta-input" required>
+                    <option value="">Atendimentos por mês</option>
+                    <option value="Até 500">Até 500</option>
+                    <option value="501 a 2.000">501 a 2.000</option>
+                    <option value="2.001 a 5.000">2.001 a 5.000</option>
+                    <option value="Mais de 5.000">Mais de 5.000</option>
+                    <option value="Não sei informar">Não sei informar</option>
+                </select>
+                <label class="sr-only" for="cta-has-queue-system">Hoje utiliza sistema de senhas?</label>
+                <select id="cta-has-queue-system" name="hasQueueSystem" class="cta-input" required>
+                    <option value="">Hoje utiliza sistema de senhas?</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                    <option value="Parcialmente">Parcialmente</option>
+                </select>
+                <label class="sr-only" for="cta-has-wait-reports">Tem relatórios de tempo de espera?</label>
+                <select id="cta-has-wait-reports" name="hasWaitReports" class="cta-input" required>
+                    <option value="">Tem relatórios de tempo de espera?</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                    <option value="Não sei">Não sei</option>
+                </select>
+                <label class="sr-only" for="cta-worst-queue">Onde há mais fila?</label>
+                <input id="cta-worst-queue" name="worstQueue" type="text" class="cta-input full" placeholder="Onde há mais fila? Ex.: saúde, protocolo, assistência social, recepção" required>
+                <label class="sr-only" for="cta-wants-demo">Gostaria de receber uma demonstração?</label>
+                <select id="cta-wants-demo" name="wantsDemo" class="cta-input" required>
+                    <option value="">Gostaria de receber uma demonstração?</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Talvez">Talvez</option>
+                    <option value="Ainda não">Ainda não</option>
+                </select>
+                <label class="sr-only" for="cta-accepts-call">Aceitaria conversar por 20 minutos?</label>
+                <select id="cta-accepts-call" name="acceptsCall" class="cta-input" required>
+                    <option value="">Aceitaria conversar por 20 minutos?</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Talvez">Talvez</option>
+                    <option value="Prefiro contato por e-mail">Prefiro contato por e-mail</option>
+                </select>
                 <label class="sr-only" for="cta-message">Mensagem</label>
-                <textarea id="cta-message" name="message" class="cta-input cta-textarea full" placeholder="Conte o que você precisa" rows="4"></textarea>
+                <textarea id="cta-message" name="message" class="cta-input cta-textarea full" placeholder="Conte o que você precisa ou qual problema deseja resolver" rows="4"></textarea>
                 <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off">
                 <div class="cta-actions full">
-                    <button type="submit" class="cta-button">Solicitar proposta de piloto</button>
+                    <button type="submit" class="cta-button">Enviar diagnóstico</button>
                     <a href="/sistema-de-filas/" class="cta-link">Conhecer o sistema</a>
                 </div>
             </form>
@@ -1761,7 +1814,7 @@
         });
 
         // Form Handler
-        const SHEETS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyi5YzJ6v1kGWmBf55qG26FY32hBYLRHMBiIyGbwVzz9YuJfTDfBZHI2IUMF81d9oNl/exec';
+        const SHEETS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyFTEcFk5N_Xit7LYYHzH9JvL14PZxd4OnMw1Uq-OnbfzaBNZ7aXgg-74SnfenzVSsx/exec';
 
         async function handleSubmit(e) {
             e.preventDefault();
@@ -1770,6 +1823,14 @@
             const email = form.querySelector('input[name="email"]').value.trim();
             const phone = form.querySelector('input[name="phone"]').value.trim();
             const city = form.querySelector('input[name="city"]').value.trim();
+            const organization = form.querySelector('[name="organization"]')?.value.trim() || '';
+            const institutionType = form.querySelector('[name="institutionType"]')?.value.trim() || '';
+            const monthlyVolume = form.querySelector('[name="monthlyVolume"]')?.value.trim() || '';
+            const hasQueueSystem = form.querySelector('[name="hasQueueSystem"]')?.value.trim() || '';
+            const hasWaitReports = form.querySelector('[name="hasWaitReports"]')?.value.trim() || '';
+            const worstQueue = form.querySelector('[name="worstQueue"]')?.value.trim() || '';
+            const wantsDemo = form.querySelector('[name="wantsDemo"]')?.value.trim() || '';
+            const acceptsCall = form.querySelector('[name="acceptsCall"]')?.value.trim() || '';
             const messageText = form.querySelector('textarea[name="message"]').value.trim();
             const honeypot = form.querySelector('input[name="company"]');
             const message = document.querySelector('.form-message');
@@ -1797,10 +1858,30 @@
                     email,
                     phone,
                     telefone: phone,
+                    organization,
+                    orgaoInstituicao: organization,
                     city,
                     cidade: city,
                     cidadePrefeitura: city,
                     prefeitura: city,
+                    institutionType,
+                    tipoInstituicao: institutionType,
+                    monthlyVolume,
+                    atendimentosMes: monthlyVolume,
+                    hasQueueSystem,
+                    usaSistemaSenhas: hasQueueSystem,
+                    hasWaitReports,
+                    possuiRelatoriosEspera: hasWaitReports,
+                    worstQueue,
+                    ondeHaMaisFila: worstQueue,
+                    wantsDemo,
+                    querDemonstracao: wantsDemo,
+                    acceptsCall,
+                    aceitaConversa20Min: acceptsCall,
+                    interesse: wantsDemo === 'Sim' || acceptsCall === 'Sim' ? 'Demonstração / conversa' : 'Diagnóstico',
+                    status: 'Aguardando resposta',
+                    proximaAcao: acceptsCall === 'Sim' ? 'Agendar conversa de 20 minutos' : 'Enviar e-mail de retorno',
+                    nivelInteresse: wantsDemo === 'Sim' && acceptsCall === 'Sim' ? 'Alto' : (wantsDemo === 'Sim' || acceptsCall === 'Sim' ? 'Médio' : 'Baixo'),
                     message: messageText,
                     mensagem: messageText,
                     page: window.location.href,
@@ -1821,7 +1902,7 @@
                     dataEnvio: submittedAt.toISOString(),
                     dataLocal: submittedAt.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
                     formId: form.id || 'cta-form',
-                    leadResumo: `Nome: ${name} | Email: ${email} | Telefone: ${phone} | Cidade/Prefeitura: ${city} | Mensagem: ${messageText}`
+                    leadResumo: `Nome: ${name} | Email: ${email} | Telefone: ${phone} | Instituição: ${organization} | Município/Estado: ${city} | Tipo: ${institutionType} | Atendimentos/mês: ${monthlyVolume} | Usa senhas: ${hasQueueSystem} | Relatórios espera: ${hasWaitReports} | Maior fila: ${worstQueue} | Demonstração: ${wantsDemo} | Conversa: ${acceptsCall} | Mensagem: ${messageText}`
                 };
 
                 const res = await fetch(SHEETS_WEBAPP_URL, {
@@ -1836,7 +1917,7 @@
                 if (message) {
                     const nowText = new Date().toLocaleString('pt-BR');
                     const nameText = name ? `, ${name}` : '';
-                    message.textContent = `Obrigado${nameText}! Recebemos sua solicitação em ${nowText}. Entraremos em contato em ${email} em breve para falar sobre o piloto do SIGFILA.`;
+                    message.textContent = `Obrigado${nameText}! Recebemos sua solicitação em ${nowText}. Em até 1 dia útil, entraremos em contato em ${email} com os próximos passos. Seus dados serão usados apenas para analisar a demanda e falar sobre o SIGFILA.`;
                 }
                 e.target.reset();
             } catch (err) {

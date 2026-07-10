@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Piloto SIGFILA | 30 dias para medir filas</title>
+    <meta name="description" content="Implantação piloto do SIGFILA por 30 dias para medir filas, tempo de espera, volume de atendimentos, satisfação e potencial de expansão.">
+    <link rel="canonical" href="https://sigfila.com.br/piloto/">
+    <link rel="icon" type="image/x-icon" href="/sigfila.ico">
+    <style>
+        :root {
+            --cyan: #00AEEF;
+            --cyan-dark: #0090C8;
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --text: #172033;
+            --muted: #64748B;
+            --dark: #0F172A;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .brand {
+            color: var(--cyan-dark);
+            font-weight: 800;
+            font-size: 1.35rem;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .hero {
+            background: linear-gradient(135deg, #E6F7FF 0%, #FFFFFF 72%);
+            padding: 5rem 1.5rem 4rem;
+        }
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .badge {
+            display: inline-flex;
+            background: #E6F7FF;
+            border: 1px solid rgba(0, 174, 239, 0.25);
+            color: var(--cyan-dark);
+            border-radius: 999px;
+            padding: 0.45rem 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.08;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            color: var(--muted);
+            font-size: 1.16rem;
+            margin-bottom: 1.5rem;
+        }
+        .actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.95rem 1.35rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+        }
+        .btn-primary {
+            background: var(--cyan);
+            color: white;
+        }
+        .btn-secondary {
+            border: 2px solid var(--border);
+            color: var(--text);
+            background: white;
+        }
+        .panel {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+        }
+        .panel h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .panel ul {
+            list-style: none;
+            display: grid;
+            gap: 0.65rem;
+            color: var(--muted);
+        }
+        .panel li::before {
+            content: "✓";
+            color: var(--cyan-dark);
+            font-weight: 900;
+            margin-right: 0.5rem;
+        }
+        section {
+            padding: 4rem 1.5rem;
+        }
+        .section-head {
+            max-width: 760px;
+            margin-bottom: 2rem;
+        }
+        .section-head span {
+            color: var(--cyan-dark);
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+        }
+        .section-head h2 {
+            font-size: clamp(1.9rem, 3vw, 2.7rem);
+            line-height: 1.14;
+            margin: 0.4rem 0 0.8rem;
+        }
+        .section-head p {
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+        .card strong {
+            display: block;
+            margin-bottom: 0.45rem;
+            font-size: 1.08rem;
+        }
+        .card p {
+            color: var(--muted);
+        }
+        .dark {
+            background: var(--dark);
+            color: white;
+        }
+        .dark .section-head p,
+        .dark .card p {
+            color: rgba(255,255,255,0.72);
+        }
+        .dark .card {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.12);
+        }
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.65);
+            padding: 2rem 1.5rem;
+        }
+        @media (max-width: 820px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            nav { align-items: flex-start; flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="brand" href="/">SIGFILA</a>
+            <div class="nav-links">
+                <a href="/">Início</a>
+                <a href="/diagnostico/">Diagnóstico gratuito</a>
+                <a href="/como-funciona/">Demonstração</a>
+                <a href="/contato/">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="badge">Programa Piloto SIGFILA</div>
+                    <h1>30 dias para medir filas, gargalos e satisfação no atendimento presencial</h1>
+                    <p>Implantação controlada em uma unidade para gerar dados reais, apoiar decisão de contrato e criar evidência de resultado.</p>
+                    <div class="actions">
+                        <a class="btn btn-primary" href="/diagnostico/">Solicitar diagnóstico gratuito</a>
+                        <a class="btn btn-secondary" href="/como-funciona/">Ver demonstração</a>
+                    </div>
+                </div>
+                <aside class="panel">
+                    <h2>Escopo sugerido</h2>
+                    <ul>
+                        <li>Duração de 30 dias</li>
+                        <li>1 local de atendimento</li>
+                        <li>Até 3 serviços prioritários</li>
+                        <li>Painel, senhas, relatórios e diagnóstico final</li>
+                        <li>Dados anonimizados para estudo de caso</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="section-head">
+                    <span>Entregas</span>
+                    <h2>O que o piloto precisa provar</h2>
+                    <p>O objetivo não é instalar tecnologia por instalar. É mostrar se a operação consegue reduzir incerteza, organizar equipe e gerar indicadores úteis.</p>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <strong>Tempo de espera</strong>
+                        <p>Medir espera média, picos e variação por serviço.</p>
+                    </div>
+                    <div class="card">
+                        <strong>Volume por serviço</strong>
+                        <p>Entender quais atendimentos geram maior demanda.</p>
+                    </div>
+                    <div class="card">
+                        <strong>Satisfação</strong>
+                        <p>Coletar avaliação do atendimento para orientar melhoria.</p>
+                    </div>
+                    <div class="card">
+                        <strong>Relatório final</strong>
+                        <p>Entregar diagnóstico com próximos passos e proposta de expansão.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dark">
+            <div class="container">
+                <div class="section-head">
+                    <span>Quem pode testar</span>
+                    <h2>Órgãos públicos e operações presenciais de alto fluxo</h2>
+                    <p>O piloto pode começar em prefeituras, secretarias, autarquias, Procons, unidades de saúde, universidades, clínicas, associações e empresas com atendimento presencial.</p>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <strong>Contrapartida desejada</strong>
+                        <p>Permissão para usar dados anonimizados como estudo de caso, quando houver autorização formal.</p>
+                    </div>
+                    <div class="card">
+                        <strong>Caminho comercial</strong>
+                        <p>Depois do piloto, a contratação pode evoluir por unidade, setor, guichê, totem, display e módulos adicionais.</p>
+                    </div>
+                    <div class="card">
+                        <strong>Próximo passo</strong>
+                        <p>Preencher o diagnóstico gratuito para qualificar volume, dor, sistema atual e interesse em demonstração.</p>
+                    </div>
+                </div>
+                <div class="actions" style="margin-top: 2rem;">
+                    <a class="btn btn-primary" href="/diagnostico/">Preencher diagnóstico gratuito</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">© 2026 SIGFILA. Atendimento presencial com dados, filas e indicadores.</div>
+    </footer>
+</body>
+</html>

@@ -1801,7 +1801,7 @@
         <a href="/como-funciona/">Como Funciona</a>
         <a href="/como-reduzir-filas/">Redução de Filas</a>
         <a href="/indicadores/">Indicadores</a>
-        <a href="#piloto">Piloto</a>
+        <a href="/piloto/">Piloto</a>
         <a href="#tracao">Mercado</a>
         <a href="#implantacao">Implantação</a>
         <a href="#mvp">Módulos</a>
@@ -1813,7 +1813,7 @@
         <a href="/para-atendimento/">Para Atendimento</a>
         <a href="/blog/">Blog</a>
         <a href="/contato/">Contato</a>
-        <a href="/diagnostico/" class="btn-demo">Solicitar Piloto</a>
+        <a href="/diagnostico/" class="btn-demo">Diagnóstico Gratuito</a>
     </div>
 </nav>
     <div class="nav-overlay" data-nav-overlay></div>
@@ -1836,11 +1836,11 @@
             </p>
             <div class="hero-ctas">
                 <a href="/diagnostico/" class="btn-primary">
-                    Agendar reunião de piloto
+                    Solicitar diagnóstico gratuito
                     <span>→</span>
                 </a>
-                <a href="#piloto" class="btn-secondary">
-                    Ver como funciona o piloto
+                <a href="/como-funciona/" class="btn-secondary">
+                    Ver demonstração do sistema
                     <span>→</span>
                 </a>
             </div>
@@ -1970,7 +1970,7 @@
 
             <div class="summary-actions fade-in-up">
                 <a href="/diagnostico/" class="btn-secondary">
-                    Solicitar proposta de piloto
+                    Solicitar diagnóstico gratuito
                     <span>→</span>
                 </a>
             </div>
@@ -2536,7 +2536,7 @@
 
             <div class="results-cta">
                 <a href="/diagnostico/" class="btn-primary">
-                    Conversar sobre um piloto
+                    Solicitar diagnóstico gratuito
                     <span>→</span>
                 </a>
             </div>
@@ -2666,8 +2666,8 @@
     <!-- CTA Section -->
     <section class="cta-section" id="contato">
         <div class="cta-content">
-            <h2>Vamos escolher uma unidade<br>para o primeiro piloto?</h2>
-            <p>Preencha o formulário e receba uma proposta inicial para testar o SIGFILA com dados reais de atendimento.</p>
+            <h2>Receba um diagnóstico<br>para transformar fila em dados</h2>
+            <p>Preencha o formulário e ajude a mapear volume, gargalos, relatórios disponíveis e interesse em demonstração.</p>
             <form class="cta-form" onsubmit="return handleSubmit(event)">
                 <label class="sr-only" for="cta-name">Nome</label>
                 <input id="cta-name" name="name" type="text" class="cta-input" placeholder="Seu nome" autocomplete="name" required>
@@ -2681,7 +2681,7 @@
                 <textarea id="cta-message" name="message" class="cta-input cta-textarea full" placeholder="Conte um pouco sobre o desafio da sua prefeitura" required></textarea>
                 <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="cta-actions full">
-                    <button type="submit" class="cta-button">Solicitar proposta de piloto</button>
+                    <button type="submit" class="cta-button">Solicitar diagnóstico gratuito</button>
                     <a href="/contato/" class="cta-link">Falar com o SIGFILA</a>
                 </div>
             </form>
@@ -2773,7 +2773,7 @@
         });
 
         // Form Handler
-        const SHEETS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyi5YzJ6v1kGWmBf55qG26FY32hBYLRHMBiIyGbwVzz9YuJfTDfBZHI2IUMF81d9oNl/exec';
+        const SHEETS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyFTEcFk5N_Xit7LYYHzH9JvL14PZxd4OnMw1Uq-OnbfzaBNZ7aXgg-74SnfenzVSsx/exec';
 
         async function handleSubmit(e) {
             e.preventDefault();
