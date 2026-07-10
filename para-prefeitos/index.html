@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -1882,15 +1882,39 @@
             }
 
             try {
+                const submittedAt = new Date();
+                const params = new URLSearchParams(window.location.search);
                 const payload = {
                     name,
+                    nome: name,
                     email,
                     phone,
+                    telefone: phone,
                     city,
+                    cidade: city,
+                    cidadePrefeitura: city,
+                    prefeitura: city,
                     message: messageText,
+                    mensagem: messageText,
                     page: window.location.href,
+                    pagina: window.location.href,
+                    url: window.location.href,
+                    pageTitle: document.title,
+                    referrer: document.referrer || '',
+                    origem: document.referrer || 'Acesso direto',
+                    utmSource: params.get('utm_source') || '',
+                    utmMedium: params.get('utm_medium') || '',
+                    utmCampaign: params.get('utm_campaign') || '',
+                    utmContent: params.get('utm_content') || '',
+                    utmTerm: params.get('utm_term') || '',
                     userAgent: navigator.userAgent,
-                    timestamp: new Date().toISOString()
+                    user_agent: navigator.userAgent,
+                    language: navigator.language || '',
+                    timestamp: submittedAt.toISOString(),
+                    dataEnvio: submittedAt.toISOString(),
+                    dataLocal: submittedAt.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
+                    formId: form.id || 'cta-form',
+                    leadResumo: `Nome: ${name} | Email: ${email} | Telefone: ${phone} | Cidade/Prefeitura: ${city} | Mensagem: ${messageText}`
                 };
 
                 const res = await fetch(SHEETS_WEBAPP_URL, {
