@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos SIGFILA | Piloto, Essencial, Gestão e Institucional</title>
+    <meta name="description" content="Conheça os planos comerciais do SIGFILA para piloto, unidade de atendimento, gestão de múltiplos serviços e implantação institucional.">
+    <link rel="canonical" href="https://sigfila.com.br/planos/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #102a43;
+            --muted: #52616b;
+            --teal: #0f766e;
+            --cyan: #00aeef;
+            --amber: #f59e0b;
+            --line: #d8e2ea;
+            --soft: #eefaf8;
+            --paper: #ffffff;
+            --bg: #f7fafc;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: "Outfit", Arial, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.55;
+        }
+
+        a { color: inherit; }
+
+        header {
+            background: var(--paper);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .brand {
+            font-family: "Epilogue", Arial, sans-serif;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            font-size: 1.35rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .nav-links .cta {
+            color: white;
+            background: var(--cyan);
+            padding: 10px 14px;
+            border-radius: 8px;
+        }
+
+        .hero {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 72px 22px 42px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--teal);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .badge::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: var(--teal);
+        }
+
+        h1 {
+            font-family: "Epilogue", Arial, sans-serif;
+            font-size: clamp(2.2rem, 5vw, 4.5rem);
+            line-height: 1.02;
+            margin: 18px 0;
+            max-width: 920px;
+        }
+
+        .lead {
+            max-width: 790px;
+            color: var(--muted);
+            font-size: 1.2rem;
+            margin: 0 0 28px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid var(--line);
+            background: white;
+        }
+
+        .btn.primary {
+            background: var(--cyan);
+            border-color: var(--cyan);
+            color: white;
+        }
+
+        main section {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 34px 22px;
+        }
+
+        .section-title {
+            font-family: "Epilogue", Arial, sans-serif;
+            font-size: clamp(1.7rem, 3vw, 2.5rem);
+            margin: 0 0 10px;
+        }
+
+        .section-copy {
+            color: var(--muted);
+            max-width: 760px;
+            margin: 0 0 24px;
+            font-size: 1.05rem;
+        }
+
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .plan {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            min-height: 310px;
+        }
+
+        .plan.highlight {
+            border-color: var(--teal);
+            box-shadow: 0 14px 30px rgba(15, 118, 110, 0.12);
+        }
+
+        .plan-kicker {
+            color: var(--teal);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.76rem;
+        }
+
+        .plan h3 {
+            font-family: "Epilogue", Arial, sans-serif;
+            margin: 10px 0 8px;
+            font-size: 1.35rem;
+        }
+
+        .price {
+            font-size: 1.55rem;
+            font-weight: 800;
+            margin: 6px 0 14px;
+        }
+
+        .price small {
+            display: block;
+            font-size: 0.86rem;
+            color: var(--muted);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .plan ul {
+            padding-left: 18px;
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .plan li { margin-bottom: 8px; }
+
+        .note {
+            background: var(--soft);
+            border: 1px solid rgba(15, 118, 110, 0.25);
+            border-radius: 8px;
+            padding: 20px;
+            color: var(--ink);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .step {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 18px;
+        }
+
+        .step strong {
+            display: inline-flex;
+            width: 28px;
+            height: 28px;
+            border-radius: 999px;
+            align-items: center;
+            justify-content: center;
+            background: var(--teal);
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            margin-top: 40px;
+            border-top: 1px solid var(--line);
+            background: white;
+        }
+
+        .footer-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 24px 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 920px) {
+            .plans, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .nav { align-items: flex-start; flex-direction: column; }
+            .nav-links { flex-wrap: wrap; }
+        }
+
+        @media (max-width: 560px) {
+            .plans, .steps { grid-template-columns: 1fr; }
+            .hero { padding-top: 46px; }
+            .footer-inner { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav" aria-label="Navegação principal">
+            <a class="brand" href="/">SIGFILA</a>
+            <div class="nav-links">
+                <a href="/">Início</a>
+                <a href="/piloto/">Piloto</a>
+                <a href="/como-funciona/">Demonstração</a>
+                <a href="/contato/">Contato</a>
+                <a href="https://wa.me/5549998378983" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <a class="cta" href="/diagnostico/">Diagnóstico gratuito</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="badge">Planos e contratação</div>
+            <h1>Planos flexíveis para diferentes tamanhos de atendimento</h1>
+            <p class="lead">
+                Cada instituição possui uma realidade. Por isso, o SIGFILA trabalha com planos ajustados ao porte
+                do atendimento, quantidade de unidades, número de serviços, relatórios e necessidade de implantação.
+            </p>
+            <div class="actions">
+                <a class="btn primary" href="https://wa.me/5549998378983" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+                <a class="btn" href="/contato/">Solicitar proposta</a>
+                <a class="btn" href="/diagnostico/">Fazer diagnóstico gratuito</a>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Referências comerciais</h2>
+            <p class="section-copy">
+                Os valores abaixo servem como referência inicial para análise de viabilidade. O escopo final depende
+                do volume de atendimento, unidades, serviços, usuários, suporte e necessidades de implantação.
+            </p>
+
+            <div class="plans">
+                <article class="plan">
+                    <div class="plan-kicker">Validação</div>
+                    <h3>Piloto 30 dias</h3>
+                    <div class="price">Sob consulta<small>1 unidade, até 3 serviços</small></div>
+                    <ul>
+                        <li>Configuração inicial do fluxo</li>
+                        <li>Painel de senhas e chamada</li>
+                        <li>Indicadores básicos</li>
+                        <li>Relatório final do piloto</li>
+                    </ul>
+                </article>
+
+                <article class="plan highlight">
+                    <div class="plan-kicker">Entrada</div>
+                    <h3>Essencial</h3>
+                    <div class="price">A partir de R$ 890/mês<small>1 unidade de atendimento</small></div>
+                    <ul>
+                        <li>Senhas, guichês e painel</li>
+                        <li>Serviços configuráveis</li>
+                        <li>Indicadores básicos</li>
+                        <li>Suporte para operação inicial</li>
+                    </ul>
+                </article>
+
+                <article class="plan">
+                    <div class="plan-kicker">Expansão</div>
+                    <h3>Gestão</h3>
+                    <div class="price">A partir de R$ 1.490/mês<small>2 a 5 unidades ou múltiplos serviços</small></div>
+                    <ul>
+                        <li>Relatórios gerenciais</li>
+                        <li>Avaliação do cidadão</li>
+                        <li>Indicadores por serviço</li>
+                        <li>Apoio à tomada de decisão</li>
+                    </ul>
+                </article>
+
+                <article class="plan">
+                    <div class="plan-kicker">Rede maior</div>
+                    <h3>Institucional</h3>
+                    <div class="price">Sob proposta<small>Prefeitura, autarquia ou rede</small></div>
+                    <ul>
+                        <li>Múltiplas unidades</li>
+                        <li>Implantação personalizada</li>
+                        <li>Suporte ampliado</li>
+                        <li>Escopo técnico e comercial dedicado</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Como a contratação pode avançar</h2>
+            <p class="section-copy">
+                Para órgãos públicos, o SIGFILA pode fornecer proposta técnica e comercial com informações para análise administrativa,
+                respeitando as regras internas e a legislação aplicável ao órgão interessado.
+            </p>
+            <div class="steps">
+                <div class="step"><strong>1</strong><br>Diagnóstico gratuito da operação e principais filas.</div>
+                <div class="step"><strong>2</strong><br>Demonstração técnica e definição do escopo inicial.</div>
+                <div class="step"><strong>3</strong><br>Proposta com módulos, prazos, suporte e responsabilidades.</div>
+                <div class="step"><strong>4</strong><br>Piloto assistido ou contrato conforme análise do cliente.</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="note">
+                <strong>Documentação disponível para análise:</strong> proposta comercial, escopo técnico, descrição dos módulos,
+                cronograma de implantação, informações de segurança e proteção de dados, além do resumo executivo comercial.
+                <br><strong>Contato direto:</strong> WhatsApp (49) 99837-8983.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div>© 2026 SIGFILA. Todos os direitos reservados.</div>
+            <div>Idealizador: Marcos Matos dos Santos | Lages/SC</div>
+        </div>
+    </footer>
+</body>
+</html>
