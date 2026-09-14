@@ -143,11 +143,12 @@
             transform: translateX(100%);
             transition: transform 0.35s ease;
             z-index: 1100;
-            box-shadow: -12px 0 32px rgba(15, 23, 42, 0.35);
+            box-shadow: none;
             overflow-y: auto;
         }
 
         .nav-links.open {
+            box-shadow: -12px 0 32px rgba(15, 23, 42, 0.35);
             transform: translateX(0);
         }
 
@@ -1563,6 +1564,16 @@
             color: white;
             border-color: rgba(255, 255, 255, 0.6);
         }
+    .free-offer-note { max-width: 1120px; margin: 2rem auto; padding: 1.5rem; border: 1px solid #BAE6FD; border-radius: 16px; background: #F0F9FF; color: #0F172A; line-height: 1.65; } .free-offer-note strong { font-size: 1.25rem; } .free-offer-note p { margin: .75rem 0; } .free-offer-note a { display: inline-block; margin: .35rem .75rem .35rem 0; color: #075985; font-weight: 700; } @media (max-width: 768px) { .free-offer-note { margin: 1rem; } }
+
+        /* Keep hero content within narrow screens. */
+        .hero-content, .hero-visual { min-width: 0; }
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: minmax(0, 1fr); }
+            .badge { max-width: 100%; white-space: normal; }
+            .badge-dot { flex-shrink: 0; }
+            .stat-value { overflow-wrap: anywhere; }
+        }
     </style>
 </head>
 <body id="top">
@@ -1593,7 +1604,7 @@
         <a href="/para-atendimento/">Para Atendimento</a>
         <a href="/blog/" class="active">Blog</a>
         <a href="/contato/">Contato</a>
-        <a href="/diagnostico/" class="btn-demo">Diagnóstico</a>
+        <a href="https://gratuito.sigfila.com.br/free" class="btn-demo">Começar gratuitamente</a>
     </div>
 </nav>
     <div class="nav-overlay" data-nav-overlay></div>
@@ -1636,6 +1647,12 @@
             </div>
         </div>
     </section>
+<aside class="free-offer-note" aria-label="SIGFILA gratuito e módulos adicionais">
+<strong>Comece gratuitamente no SIGFILA</strong>
+<p>Cadastro com 1 serviço, 1 guichê, 1 operador, 1 totem e 1 display. Após 30 dias e contato da equipe, há possibilidade de ampliação gratuita para 3 serviços, 3 guichês e 3 operadores, mantendo 1 totem e 1 display. Enquanto aguarda o contato da equipe, o uso continua gratuito nos limites iniciais.</p>
+<p>Cidadão, previsão de fila, relatórios e multissecretaria são módulos adicionais sob consulta e não estão incluídos no gratuito.</p>
+<a href="https://gratuito.sigfila.com.br/free">Começar gratuitamente →</a> <a href="/planos/">Conhecer os limites e módulos</a>
+</aside>
 
     <section class="features" id="guias">
         <div class="container">

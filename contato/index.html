@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato | Solicite um Piloto do SIGFILA</title>
-    <meta name="description" content="Fale com o SIGFILA para estruturar um piloto de atendimento presencial com filas, indicadores, relatórios e LGPD.">
+    <title>Contato | SIGFILA gratuito e módulos adicionais</title>
+    <meta name="description" content="Fale com a equipe sobre o SIGFILA gratuito, ampliação e módulos adicionais sob consulta.">
     <link rel="canonical" href="https://sigfila.com.br/contato/">
     <link rel="icon" type="image/x-icon" href="/sigfila.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -143,11 +143,12 @@
             transform: translateX(100%);
             transition: transform 0.35s ease;
             z-index: 1100;
-            box-shadow: -12px 0 32px rgba(15, 23, 42, 0.35);
+            box-shadow: none;
             overflow-y: auto;
         }
 
         .nav-links.open {
+            box-shadow: -12px 0 32px rgba(15, 23, 42, 0.35);
             transform: translateX(0);
         }
 
@@ -1527,6 +1528,16 @@
             color: white;
             border-color: rgba(255, 255, 255, 0.6);
         }
+    .free-offer-note { max-width: 1120px; margin: 2rem auto; padding: 1.5rem; border: 1px solid #BAE6FD; border-radius: 16px; background: #F0F9FF; color: #0F172A; line-height: 1.65; } .free-offer-note strong { font-size: 1.25rem; } .free-offer-note p { margin: .75rem 0; } .free-offer-note a { display: inline-block; margin: .35rem .75rem .35rem 0; color: #075985; font-weight: 700; } @media (max-width: 768px) { .free-offer-note { margin: 1rem; } }
+
+        /* Keep hero content within narrow screens. */
+        .hero-content, .hero-visual { min-width: 0; }
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: minmax(0, 1fr); }
+            .badge { max-width: 100%; white-space: normal; }
+            .badge-dot { flex-shrink: 0; }
+            .stat-value { overflow-wrap: anywhere; }
+        }
     </style>
 </head>
 <body id="top">
@@ -1551,7 +1562,7 @@
         <a href="/como-funciona/">Como Funciona</a>
         <a href="/como-reduzir-filas/">Redução de Filas</a>
         <a href="/indicadores/">Indicadores</a>
-        <a href="/planos/">Planos</a>
+        <a href="/planos/">Gratuito e módulos</a>
         <a href="/lgpd/">LGPD</a>
         <a href="/lgpd-prefeituras/">LGPD Prefeituras</a>
         <a href="/para-prefeitos/">Para Prefeitos</a>
@@ -1560,7 +1571,7 @@
         <a href="/blog/">Blog</a>
         <a href="/contato/" class="active">Contato</a>
         <a href="https://wa.me/5549998378983" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a href="/diagnostico/" class="btn-demo">Diagnóstico Gratuito</a>
+        <a href="https://gratuito.sigfila.com.br/free" class="btn-demo">Começar gratuitamente</a>
     </div>
 </nav>
     <div class="nav-overlay" data-nav-overlay></div>
@@ -1571,9 +1582,9 @@
         <div class="hero-content">
             <div class="badge">
                 <span class="badge-dot"></span>
-                <span>Contato | Piloto SIGFILA</span>
+                <span>Contato | SIGFILA</span>
             </div>
-            <h1>Solicite uma demonstração e planeje um <span class="gradient-text">piloto real</span></h1>
+            <h1>Fale com a equipe sobre o <span class="gradient-text">SIGFILA</span></h1>
             <p class="hero-description">
                 Use esta página para contato rápido. Para uma análise mais completa da sua operação, preencha o diagnóstico gratuito.
             </p>
@@ -1596,10 +1607,10 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="stats-heading">O que você recebe</div>
+            <div class="stats-heading">Conheça as possibilidades</div>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">Piloto</div>
+                    <div class="stat-value">Gratuito</div>
                     <div class="stat-label">Escopo inicial controlado</div>
                 </div>
                 <div class="stat-card">
@@ -1608,7 +1619,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">Indicadores</div>
-                    <div class="stat-label">KPIs para gestão</div>
+                    <div class="stat-label">Relatórios: adicional sob consulta</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">LGPD</div>
@@ -1616,15 +1627,21 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">Relatório</div>
-                    <div class="stat-label">Dados para decisão</div>
+                    <div class="stat-label">Módulo adicional sob consulta</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">Escala</div>
-                    <div class="stat-label">Expansão por unidades</div>
+                    <div class="stat-label">Multissecretaria: sob consulta</div>
                 </div>
             </div>
         </div>
     </section>
+<aside class="free-offer-note" aria-label="SIGFILA gratuito e módulos adicionais">
+<strong>Comece gratuitamente no SIGFILA</strong>
+<p>Cadastro com 1 serviço, 1 guichê, 1 operador, 1 totem e 1 display. Após 30 dias e contato da equipe, há possibilidade de ampliação gratuita para 3 serviços, 3 guichês e 3 operadores, mantendo 1 totem e 1 display. Enquanto aguarda o contato da equipe, o uso continua gratuito nos limites iniciais.</p>
+<p>Cidadão, previsão de fila, relatórios e multissecretaria são módulos adicionais sob consulta e não estão incluídos no gratuito.</p>
+<a href="https://gratuito.sigfila.com.br/free">Começar gratuitamente →</a> <a href="/planos/">Conhecer os limites e módulos</a>
+</aside>
 
     <section class="results" id="vantagens">
         <div class="container">
@@ -1647,8 +1664,8 @@
                     <p class="result-text">Para quem quer análise completa, o formulário de diagnóstico coleta os dados essenciais da operação.</p>
                 </div>
                 <div class="result-card fade-in-up">
-                    <div class="result-title">Proposta de piloto</div>
-                    <p class="result-text">A conversa pode evoluir para escopo de piloto, cronograma, módulos e proposta comercial.</p>
+                    <div class="result-title">Módulos adicionais</div>
+                    <p class="result-text">Cidadão, previsão de fila, relatórios e multissecretaria são módulos adicionais sob consulta e não estão incluídos no gratuito.</p>
                 </div>
                 <div class="result-card fade-in-up">
                     <div class="result-title">Responsável identificado</div>
@@ -1661,7 +1678,7 @@
     <section class="cta-section" id="formulario">
         <div class="cta-content">
             <h2>Vamos conversar?</h2>
-            <p>Envie um contato rápido para demonstração, proposta de piloto ou dúvida comercial.</p>
+            <p>Envie sua dúvida sobre o gratuito, a ampliação ou os módulos adicionais sob consulta.</p>
             <form class="cta-form" onsubmit="return handleSubmit(event)">
                 <label class="sr-only" for="cta-name">Nome</label>
                 <input id="cta-name" name="name" type="text" class="cta-input" placeholder="Seu nome" autocomplete="name" required>
@@ -1677,7 +1694,7 @@
                 <div class="cta-actions full">
                     <button type="submit" class="cta-button">Solicitar demonstração</button>
                     <a href="https://wa.me/5549998378983" target="_blank" rel="noopener noreferrer" class="cta-link">Falar no WhatsApp</a>
-                    <a href="/diagnostico/" class="cta-link">Prefiro o diagnóstico completo</a>
+                    <a href="https://gratuito.sigfila.com.br/free" class="cta-link">Começar gratuitamente</a>
                 </div>
             </form>
             <div class="form-message" role="status" aria-live="polite"></div>
@@ -1718,7 +1735,7 @@
                 <h4 class="footer-title">Contato</h4>
                 <ul class="footer-links">
                     <li><a href="/contato/">Fale conosco</a></li>
-                    <li><a href="/diagnostico/">Solicitar piloto</a></li>
+                    <li><a href="https://gratuito.sigfila.com.br/free">Começar gratuitamente</a></li>
                     <li><a href="/indicadores/">Indicadores</a></li>
                 </ul>
             </div>
@@ -1843,7 +1860,7 @@
                 if (message) {
                     const nowText = new Date().toLocaleString('pt-BR');
                     const nameText = name ? `, ${name}` : '';
-                    message.textContent = `Obrigado${nameText}! Recebemos sua solicitação em ${nowText}. Entraremos em contato em ${email} em breve para falar sobre o piloto do SIGFILA.`;
+                    message.textContent = `Obrigado${nameText}! Recebemos sua solicitação em ${nowText}. Entraremos em contato em ${email} em breve para falar sobre o SIGFILA gratuito e os módulos adicionais.`;
                 }
                 e.target.reset();
             } catch (err) {

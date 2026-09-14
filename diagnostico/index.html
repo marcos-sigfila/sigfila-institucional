@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diagnóstico Gratuito de Filas e Atendimento | SIGFILA</title>
-    <meta name="description" content="Preencha o diagnóstico gratuito do SIGFILA para mapear filas, indicadores, sistema atual, interesse em demonstração e potencial de piloto.">
+    <meta name="description" content="Preencha o diagnóstico gratuito do SIGFILA para mapear filas, indicadores, sistema atual, interesse em demonstração e módulos adicionais.">
     <link rel="canonical" href="https://sigfila.com.br/diagnostico/">
     <link rel="icon" type="image/x-icon" href="/sigfila.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -143,11 +143,12 @@
             transform: translateX(100%);
             transition: transform 0.35s ease;
             z-index: 1100;
-            box-shadow: -12px 0 32px rgba(15, 23, 42, 0.35);
+            box-shadow: none;
             overflow-y: auto;
         }
 
         .nav-links.open {
+            box-shadow: -12px 0 32px rgba(15, 23, 42, 0.35);
             transform: translateX(0);
         }
 
@@ -1527,6 +1528,16 @@
             color: white;
             border-color: rgba(255, 255, 255, 0.6);
         }
+    .free-offer-note { max-width: 1120px; margin: 2rem auto; padding: 1.5rem; border: 1px solid #BAE6FD; border-radius: 16px; background: #F0F9FF; color: #0F172A; line-height: 1.65; } .free-offer-note strong { font-size: 1.25rem; } .free-offer-note p { margin: .75rem 0; } .free-offer-note a { display: inline-block; margin: .35rem .75rem .35rem 0; color: #075985; font-weight: 700; } @media (max-width: 768px) { .free-offer-note { margin: 1rem; } }
+
+        /* Keep hero content within narrow screens. */
+        .hero-content, .hero-visual { min-width: 0; }
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: minmax(0, 1fr); }
+            .badge { max-width: 100%; white-space: normal; }
+            .badge-dot { flex-shrink: 0; }
+            .stat-value { overflow-wrap: anywhere; }
+        }
     </style>
 </head>
 <body id="top">
@@ -1558,7 +1569,7 @@
         <a href="/para-atendimento/">Para Atendimento</a>
         <a href="/blog/">Blog</a>
         <a href="/contato/">Contato</a>
-        <a href="/diagnostico/" class="btn-demo active">Diagnóstico Gratuito</a>
+        <a href="https://gratuito.sigfila.com.br/free" class="btn-demo">Começar gratuitamente</a>
     </div>
 </nav>
     <div class="nav-overlay" data-nav-overlay></div>
@@ -1571,10 +1582,9 @@
                 <span class="badge-dot"></span>
                 <span>Diagnóstico gratuito • Atendimento presencial</span>
             </div>
-            <h1>Preencha o diagnóstico e descubra se sua operação está pronta para um <span class="gradient-text">piloto</span></h1>
+            <h1>Conte como funciona o seu <span class="gradient-text">atendimento</span></h1>
             <p class="hero-description">
-                Comece com uma unidade, secretaria, setor ou serviço de maior demanda. O piloto mede tempo de espera, volume, gargalos,
-                satisfação e aderência da equipe ao fluxo digital.
+                O diagnóstico ajuda a equipe a entender sua operação. O cadastro gratuito está disponível diretamente no botão “Começar gratuitamente”.
             </p>
             <div class="hero-ctas">
                 <a href="#formulario" class="btn-primary">
@@ -1587,14 +1597,14 @@
                 </a>
             </div>
             <div class="hero-lgpd">
-                <strong>Próximo passo:</strong> entender a operação, identificar gargalos e avaliar se faz sentido propor uma demonstração ou piloto.
+                <strong>Próximo passo:</strong> entender a operação e esclarecer dúvidas sobre o gratuito e os módulos adicionais.
             </div>
         </div>
         <div class="hero-visual">
-            <div class="stats-heading">O que você recebe</div>
+            <div class="stats-heading">Conheça as possibilidades</div>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">Piloto</div>
+                    <div class="stat-value">Gratuito</div>
                     <div class="stat-label">Unidade ou serviço escolhido</div>
                 </div>
                 <div class="stat-card">
@@ -1603,7 +1613,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">Indicadores</div>
-                    <div class="stat-label">KPIs para gestão</div>
+                    <div class="stat-label">Relatórios: adicional sob consulta</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">LGPD</div>
@@ -1611,23 +1621,29 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">Relatório</div>
-                    <div class="stat-label">Dados para contratação</div>
+                    <div class="stat-label">Módulo adicional sob consulta</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">Escala</div>
-                    <div class="stat-label">Expansão por unidades</div>
+                    <div class="stat-label">Multissecretaria: sob consulta</div>
                 </div>
             </div>
         </div>
     </section>
+<aside class="free-offer-note" aria-label="SIGFILA gratuito e módulos adicionais">
+<strong>Comece gratuitamente no SIGFILA</strong>
+<p>Cadastro com 1 serviço, 1 guichê, 1 operador, 1 totem e 1 display. Após 30 dias e contato da equipe, há possibilidade de ampliação gratuita para 3 serviços, 3 guichês e 3 operadores, mantendo 1 totem e 1 display. Enquanto aguarda o contato da equipe, o uso continua gratuito nos limites iniciais.</p>
+<p>Cidadão, previsão de fila, relatórios e multissecretaria são módulos adicionais sob consulta e não estão incluídos no gratuito.</p>
+<a href="https://gratuito.sigfila.com.br/free">Começar gratuitamente →</a> <a href="/planos/">Conhecer os limites e módulos</a>
+</aside>
 
     <section class="results" id="vantagens">
         <div class="container">
             <div class="section-header fade-in-up">
-                <div class="section-tag">● O QUE VOCÊ RECEBE</div>
-                <h2 class="section-title">Piloto com foco em resultado operacional e decisão de contrato</h2>
+                <div class="section-tag">● CONHEÇA AS POSSIBILIDADES</div>
+                <h2 class="section-title">Converse sobre sua operação e os módulos adicionais</h2>
                 <p class="section-description">
-                    Menos incerteza para contratar: a prefeitura testa, mede e decide com base em dados.
+                    Cidadão, previsão de fila, relatórios e multissecretaria são módulos adicionais sob consulta e não estão incluídos no gratuito.
                 </p>
             </div>
 
@@ -1637,16 +1653,16 @@
                     <p class="result-text">Uma unidade ou secretaria para validar a operação sem alto risco inicial.</p>
                 </div>
                 <div class="result-card fade-in-up">
-                    <div class="result-title">Fluxo configurado</div>
-                    <p class="result-text">Serviços, prioridades, guichês, operadores, display e QR Code.</p>
+                    <div class="result-title">Fluxo gratuito</div>
+                    <p class="result-text">1 serviço, 1 guichê, 1 operador, 1 totem e 1 display.</p>
                 </div>
                 <div class="result-card fade-in-up">
                     <div class="result-title">Indicadores objetivos</div>
-                    <p class="result-text">Tempo médio, volume por serviço, ausências, picos e satisfação.</p>
+                    <p class="result-text">Indicadores no módulo Relatórios e avaliação no módulo Cidadão: adicionais sob consulta.</p>
                 </div>
                 <div class="result-card fade-in-up">
-                    <div class="result-title">Proposta de expansão</div>
-                    <p class="result-text">Relatório final para orientar contrato e próximas unidades.</p>
+                    <div class="result-title">Possibilidade de ampliação</div>
+                    <p class="result-text">Após 30 dias e contato da equipe, poderá haver ampliação gratuita dos limites.</p>
                 </div>
             </div>
         </div>
@@ -1764,7 +1780,7 @@
                 <h4 class="footer-title">Contato</h4>
                 <ul class="footer-links">
                     <li><a href="/contato/">Fale conosco</a></li>
-                    <li><a href="/diagnostico/">Solicitar piloto</a></li>
+                    <li><a href="https://gratuito.sigfila.com.br/free">Começar gratuitamente</a></li>
                     <li><a href="/indicadores/">Indicadores</a></li>
                 </ul>
             </div>

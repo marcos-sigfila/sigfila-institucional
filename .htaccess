@@ -8,3 +8,13 @@ RewriteRule ^(.*)$ https://sigfila.com.br/$1 [L,R=301]
 # Old URLs -> new SEO URLs
 RewriteRule ^solucao/?$ /sistema-de-filas/ [L,R=301]
 RewriteRule ^transparencia/?$ /indicadores/ [L,R=301]
+
+# Keep old standalone drafts out of search indexes
+<IfModule mod_headers.c>
+  <FilesMatch "^(ofertaPrefeituraPiloto|sigfila-website)\.html$">
+    Header set X-Robots-Tag "noindex, nofollow, noarchive"
+  </FilesMatch>
+</IfModule>
+
+# Retired offers and commercial summary now point to the current free offer
+RewriteRule ^(?:ofertaPrefeituraPiloto\.html|sigfila-website\.html|resumo-executivo-sigfila\.pdf)$ /planos/ [L,R=301]
