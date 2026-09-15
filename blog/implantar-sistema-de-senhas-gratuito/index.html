@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como reduzir filas em órgãos públicos: estratégias que funcionam | Blog SIGFILA</title>
-    <meta name="description" content="Guia prático para reduzir filas, distribuir demanda e melhorar o atendimento público com dados.">
+    <title>Como implantar um sistema de senhas gratuito: guia passo a passo | Blog SIGFILA</title>
+    <meta name="description" content="Guia para configurar um sistema de senhas gratuito, preparar o primeiro atendimento e entender os limites e módulos do SIGFILA.">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:title" content="Como reduzir filas em órgãos públicos: estratégias que funcionam">
-    <meta property="og:description" content="Guia prático para reduzir filas, distribuir demanda e melhorar o atendimento público com dados.">
-    <meta property="og:url" content="https://sigfila.com.br/blog/reduzir-filas-orgaos-publicos/">
+    <meta property="og:title" content="Como implantar um sistema de senhas gratuito: guia passo a passo">
+    <meta property="og:description" content="Guia para configurar um sistema de senhas gratuito, preparar o primeiro atendimento e entender os limites e módulos do SIGFILA.">
+    <meta property="og:url" content="https://sigfila.com.br/blog/implantar-sistema-de-senhas-gratuito/">
     <meta property="og:image" content="https://sigfila.com.br/logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="author" content="Marcos Matos">
-    <link rel="canonical" href="https://sigfila.com.br/blog/reduzir-filas-orgaos-publicos/">
+    <link rel="canonical" href="https://sigfila.com.br/blog/implantar-sistema-de-senhas-gratuito/">
     <link rel="icon" type="image/x-icon" href="/sigfila.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -557,33 +557,89 @@
 
         .article-meta { display: flex; flex-wrap: wrap; gap: .55rem 1rem; margin-top: 1.25rem; color: var(--text-secondary); font-size: .92rem; }
         .article-meta span { display: inline-flex; align-items: center; gap: .4rem; }
+    
+        .guide-wrap { max-width: 900px; margin: 0 auto; }
+        .guide-section { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 10px 28px rgba(15, 23, 42, .06); }
+        .guide-section h2 { font-size: 1.65rem; line-height: 1.25; margin-bottom: 1rem; }
+        .guide-section h3 { font-size: 1.2rem; margin: 1.5rem 0 .6rem; }
+        .guide-section p + p { margin-top: 1rem; }
+        .guide-section ul, .guide-section ol { padding-left: 1.4rem; margin: 1rem 0; color: var(--text-secondary); }
+        .guide-section li + li { margin-top: .6rem; }
+        .guide-section a { color: var(--cyan-dark); font-weight: 600; }
+        .step-label { display: inline-block; margin-bottom: .75rem; padding: .35rem .75rem; border-radius: 999px; background: var(--cyan-light); color: var(--cyan-dark); font-weight: 700; font-size: .8rem; }
+        .checklist { list-style: none; padding: 0 !important; }
+        .checklist li { position: relative; padding-left: 1.8rem; }
+        .checklist li::before { content: '✓'; position: absolute; left: 0; color: #15803D; font-weight: 800; }
+        .limit-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .75rem; margin: 1.25rem 0; }
+        .limit-item { padding: 1rem .7rem; text-align: center; border: 1px solid #BAE6FD; border-radius: 12px; background: #F0F9FF; }
+        .limit-item strong { display: block; font-size: 1.55rem; color: #0369A1; }
+        .comparison { width: 100%; border-collapse: collapse; margin: 1.2rem 0; }
+        .comparison th, .comparison td { text-align: left; padding: .85rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .comparison th { background: #F8FAFC; font-size: .9rem; }
+        .notice { border-left: 4px solid var(--amber); background: #FFFBEB; padding: 1rem 1.2rem; border-radius: 0 12px 12px 0; margin: 1.25rem 0; }
+        .faq-item + .faq-item { border-top: 1px solid var(--border); padding-top: 1.25rem; margin-top: 1.25rem; }
+        .article-source { color: var(--text-secondary); font-size: .9rem; }
+        @media (max-width: 768px) { .guide-section { padding: 1.4rem; } .limit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .comparison { display: block; overflow-x: auto; } }
     </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Como reduzir filas em órgãos públicos: estratégias que funcionam",
-  "description": "Guia prático para reduzir filas, distribuir demanda e melhorar o atendimento público com dados.",
-  "image": "https://sigfila.com.br/logo.png",
-  "datePublished": "2026-04-13",
-  "dateModified": "2026-09-15",
-  "inLanguage": "pt-BR",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://sigfila.com.br/blog/reduzir-filas-orgaos-publicos/"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Marcos Matos"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "SIGFILA",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://sigfila.com.br/logo.png"
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Como implantar um sistema de senhas gratuito: guia passo a passo",
+      "description": "Guia para configurar um sistema de senhas gratuito, preparar o primeiro atendimento e entender os limites e módulos do SIGFILA.",
+      "image": "https://sigfila.com.br/logo.png",
+      "datePublished": "2026-09-15",
+      "dateModified": "2026-09-15",
+      "inLanguage": "pt-BR",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sigfila.com.br/blog/implantar-sistema-de-senhas-gratuito/"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Marcos Matos"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SIGFILA",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sigfila.com.br/logo.png"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O uso continua gratuito enquanto aguardo o contato da equipe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Enquanto aguarda o contato, o uso continua gratuito nos limites iniciais de 1 serviço, 1 guichê, 1 operador, 1 totem e 1 display."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que pode ser ampliado após 30 dias?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Após 30 dias e contato da equipe, pode haver ampliação gratuita para 3 serviços, 3 guichês e 3 operadores. O limite permanece em 1 totem e 1 display."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Relatórios e previsão de fila estão incluídos no gratuito?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Cidadão, previsão de fila, relatórios e multissecretaria são módulos adicionais sob consulta."
+          }
+        }
+      ]
     }
-  }
+  ]
 }
 </script>
 </head>
@@ -624,84 +680,149 @@
 <main>
     <section class="hero">
         <div class="container">
-            <div class="badge">
-                <span class="badge-dot"></span>
-                <span>Blog SIGFILA</span>
-            </div>
-            <h1>Como reduzir filas em órgãos públicos: estratégias que funcionam</h1>
-            <p class="hero-description">Filas longas viram reclamação e pressão política. Este guia mostra como mapear gargalos e agir com dados para reduzir o tempo de espera.</p>
+            <div class="badge"><span class="badge-dot"></span><span>Guia prático SIGFILA</span></div>
+            <h1>Como implantar um sistema de senhas gratuito: guia passo a passo</h1>
+            <p class="hero-description">Organize uma operação simples, teste o fluxo no atendimento real e saiba com clareza o que faz parte do cadastro gratuito.</p>
             <div class="article-meta" aria-label="Informações do artigo">
-                <span>Por Marcos Matos</span>
-                <span>Atualizado em 15 de setembro de 2026</span>
-                <span>Leitura de 3 minutos</span>
+                <span>Por Marcos Matos</span><span>Publicado em 15 de setembro de 2026</span><span>Leitura de 8 minutos</span>
             </div>
             <div class="hero-links">
-                <a class="chip-link" href="/como-reduzir-filas/">Plano de redução de filas</a>
-                <a class="chip-link" href="/indicadores/">Indicadores em tempo real</a>
+                <a class="chip-link" href="#passo-a-passo">Ver passo a passo</a>
+                <a class="chip-link" href="#limites">Entender os limites</a>
                 <a class="chip-link" href="https://gratuito.sigfila.com.br/free">Começar gratuitamente</a>
             </div>
         </div>
     </section>
-<aside class="free-offer-note" aria-label="SIGFILA gratuito e módulos adicionais">
-<strong>Comece gratuitamente no SIGFILA</strong>
-<p>Cadastro com 1 serviço, 1 guichê, 1 operador, 1 totem e 1 display. Após 30 dias e contato da equipe, há possibilidade de ampliação gratuita para 3 serviços, 3 guichês e 3 operadores, mantendo 1 totem e 1 display. Enquanto aguarda o contato da equipe, o uso continua gratuito nos limites iniciais.</p>
-<p>Cidadão, previsão de fila, relatórios e multissecretaria são módulos adicionais sob consulta e não estão incluídos no gratuito.</p>
-<a href="https://gratuito.sigfila.com.br/free">Começar gratuitamente →</a> <a href="/planos/">Conhecer os limites e módulos</a>
-</aside>
 
-    <section class="content">
-        <div class="container">
-            <article class="content-card full">
-                <h2>Comece pelo diagnóstico da fila</h2>
-                <p>Reduzir uma fila exige descobrir onde o tempo é consumido. Observe a chegada, a emissão da senha, a espera, a chamada e a conclusão do serviço. Um salão cheio pode ser consequência de um pico concentrado, de um cadastro demorado ou de um serviço encaminhado ao guichê errado.</p>
-                <p>Registre por alguns dias os horários de maior movimento, os serviços mais solicitados e as dúvidas repetidas no balcão. Converse com quem atende: a equipe costuma identificar etapas duplicadas, documentos que faltam e encaminhamentos que fazem o cidadão voltar para a fila.</p>
+    <aside class="free-offer-note" aria-label="Resumo do SIGFILA gratuito">
+        <strong>O que você pode cadastrar gratuitamente</strong>
+        <p>Comece com 1 serviço, 1 guichê, 1 operador, 1 totem e 1 display. Após 30 dias e contato da equipe, há possibilidade de ampliação gratuita para 3 serviços, 3 guichês e 3 operadores, mantendo 1 totem e 1 display.</p>
+        <p>Enquanto aguarda o contato da equipe, o uso continua gratuito nos limites iniciais. Cidadão, previsão de fila, relatórios e multissecretaria são módulos adicionais sob consulta e não estão incluídos no gratuito.</p>
+        <a href="https://gratuito.sigfila.com.br/free">Começar gratuitamente →</a> <a href="/planos/">Ver limites e módulos</a>
+    </aside>
+
+    <section class="content" id="passo-a-passo">
+        <div class="container guide-wrap">
+            <article class="guide-section">
+                <span class="step-label">ANTES DE COMEÇAR</span>
+                <h2>Escolha um fluxo simples para a primeira implantação</h2>
+                <p>Uma implantação segura começa pequena. Escolha um local com atendimento presencial, uma equipe que possa testar a rotina e um serviço fácil de explicar ao cidadão. O objetivo inicial é colocar a emissão e a chamada de senhas para funcionar sem transformar toda a operação de uma vez.</p>
+                <p>Exemplos de bons pontos de partida são recepção, protocolo, cadastro ou retirada de documentos. Se o local oferece muitos serviços, escolha aquele que representa a maior parte do movimento ou que possui uma fila bem definida.</p>
+                <ul class="checklist">
+                    <li>Defina o nome do serviço como o cidadão o reconhece.</li>
+                    <li>Escolha o guichê e o operador responsáveis pelo teste.</li>
+                    <li>Separe onde o totem ficará disponível para emitir senhas.</li>
+                    <li>Posicione o display onde a chamada possa ser vista com facilidade.</li>
+                    <li>Combine com a equipe o dia e o horário de início.</li>
+                </ul>
             </article>
-            <div class="content-grid">
-                <article class="content-card"><h2>Ações de curto prazo</h2><ul class="content-list"><li>Informe os documentos necessários antes da emissão da senha.</li><li>Use nomes de serviços que o cidadão reconhece.</li><li>Reforce a equipe apenas nos horários de pico.</li><li>Separe orientações rápidas de atendimentos demorados.</li></ul></article>
-                <article class="content-card"><h2>O que acompanhar</h2><ul class="content-list"><li>Tempo de espera por serviço e faixa de horário.</li><li>Quantidade de pessoas atendidas e desistências.</li><li>Duração do atendimento e variação entre dias.</li><li>Motivos de retorno ao balcão.</li></ul></article>
-            </div>
-            <article class="content-card full"><h2>Melhore uma etapa por vez</h2><p>Escolha o principal gargalo, faça uma mudança pequena e compare o resultado com o período anterior. Se a orientação na entrada reduzir senhas emitidas para o serviço errado, mantenha a nova rotina e avance para o próximo ponto. Mudanças simultâneas dificultam saber qual ação funcionou.</p><p>O fluxo básico do SIGFILA ajuda a organizar emissão e chamada de senhas. Indicadores detalhados dependem do módulo adicional Relatórios, disponível sob consulta.</p></article>
-        </div>
-    </section>
 
-        <section class="related-posts">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">● LEIA TAMBÉM</div>
-                <h2 class="section-title">Outros conteúdos que ajudam na decisão</h2>
-                <p class="section-description">Aprofunde em temas estratégicos para o atendimento público.</p>
-            </div>
-            <div class="related-grid">
-                <article class="related-card">
-                    <span class="related-tag">Digital</span>
-                    <h3>Fila digital na prefeitura: o que é e por que funciona</h3>
-                    <p>Entenda como a fila digital reduz conflitos e melhora a experiência do cidadão.</p>
-                    <a href="/blog/fila-digital-prefeitura/">Ler artigo →</a>
-                </article>
-                <article class="related-card">
-                    <span class="related-tag">LGPD</span>
-                    <h3>LGPD na prática para prefeituras: o que muda no atendimento</h3>
-                    <p>Como adequar coleta, tratamento e acesso aos dados do cidadão no atendimento público.</p>
-                    <a href="/blog/lgpd-na-pratica-prefeituras/">Ler artigo →</a>
-                </article>
-                <article class="related-card">
-                    <span class="related-tag">Indicadores</span>
-                    <h3>Indicadores que todo gestor público precisa acompanhar no atendimento</h3>
-                    <p>Lista prática de métricas para controlar filas e produtividade no setor público.</p>
-                    <a href="/blog/indicadores-atendimento-publico/">Ler artigo →</a>
-                </article>
-            </div>
-        </div>
-    </section>
-    <section class="cta-section">
-        <div class="container">
-            <h2>Quer aplicar isso na sua prefeitura?</h2>
-            <p>Cadastre sua operação e experimente o fluxo básico do SIGFILA gratuitamente.</p>
-            <div class="cta-actions">
-                <a href="https://gratuito.sigfila.com.br/free" class="btn-primary">Começar gratuitamente</a>
-                <a href="/sistema-de-filas/" class="btn-secondary">Conhecer o sistema</a>
-                <a href="/blog/" class="btn-secondary btn-tertiary">Voltar ao blog</a>
-            </div>
+            <article class="guide-section" id="limites">
+                <span class="step-label">CONFIGURAÇÃO INICIAL</span>
+                <h2>Entenda os cinco elementos do cadastro gratuito</h2>
+                <p>A configuração inicial atende uma operação enxuta. Cada elemento tem uma função clara no caminho entre a chegada do cidadão e o início do atendimento.</p>
+                <div class="limit-grid" aria-label="Limites iniciais do cadastro gratuito">
+                    <div class="limit-item"><strong>1</strong>serviço</div>
+                    <div class="limit-item"><strong>1</strong>guichê</div>
+                    <div class="limit-item"><strong>1</strong>operador</div>
+                    <div class="limit-item"><strong>1</strong>totem</div>
+                    <div class="limit-item"><strong>1</strong>display</div>
+                </div>
+                <p><strong>Serviço</strong> é o tipo de atendimento oferecido. <strong>Guichê</strong> representa o ponto onde a pessoa será atendida. <strong>Operador</strong> é quem chama a próxima senha. <strong>Totem</strong> é a tela usada para gerar senhas. <strong>Display</strong> é a tela que apresenta as chamadas ao público.</p>
+                <div class="notice"><strong>Atenção:</strong> o cadastro gratuito não inclui os módulos Cidadão, previsão de fila, relatórios ou multissecretaria. Esses recursos são adicionais e podem ser consultados separadamente.</div>
+            </article>
+
+            <article class="guide-section">
+                <span class="step-label">PASSO 1</span>
+                <h2>Cadastre a operação com nomes fáceis de entender</h2>
+                <p>Ao criar o serviço, evite siglas internas. “Entrega de documentos” comunica melhor que um código de departamento. No guichê, use um nome curto que corresponda à sinalização física, como “Guichê 1”. No operador, cadastre a pessoa que fará as chamadas durante o teste.</p>
+                <p>Depois, configure o totem para oferecer o serviço cadastrado e o display para exibir as chamadas. Revise a ortografia e confirme com a equipe se os nomes usados na tela são os mesmos falados no balcão. Essa consistência reduz dúvidas logo no primeiro dia.</p>
+            </article>
+
+            <article class="guide-section">
+                <span class="step-label">PASSO 2</span>
+                <h2>Prepare o ambiente antes de abrir a fila</h2>
+                <p>Faça um teste completo antes do atendimento ao público: emita uma senha no totem, abra o acesso do operador, chame a senha e confira se a informação aparece no display. Repita o fluxo algumas vezes para que a equipe reconheça cada etapa.</p>
+                <h3>Checklist técnico e operacional</h3>
+                <ul class="checklist">
+                    <li>Verifique a conexão com a internet nos dispositivos que serão usados.</li>
+                    <li>Confirme se o totem está acessível na entrada ou no ponto de recepção.</li>
+                    <li>Abra o display em uma tela visível e confira o tamanho das informações.</li>
+                    <li>Teste a chamada do operador a partir do guichê.</li>
+                    <li>Defina quem ajudará o cidadão a emitir a senha nos primeiros atendimentos.</li>
+                </ul>
+            </article>
+
+            <article class="guide-section">
+                <span class="step-label">PASSO 3</span>
+                <h2>Comece o atendimento e observe o fluxo real</h2>
+                <p>No início do expediente, acompanhe as primeiras emissões. O operador deve chamar a próxima senha somente quando o guichê estiver pronto. Se alguém tiver dificuldade no totem, registre a dúvida para melhorar a orientação no local.</p>
+                <p>Durante o primeiro dia, observe três pontos: se o cidadão encontra o totem, se entende qual serviço escolher e se consegue identificar a chamada no display. Ajustes de posição, sinalização e linguagem costumam resolver boa parte das dificuldades iniciais.</p>
+                <p>Evite cadastrar vários serviços apenas para reproduzir toda a estrutura interna. Primeiro confirme que o fluxo básico funciona. A expansão pode ser planejada depois, com evidências do uso real.</p>
+            </article>
+
+            <article class="guide-section">
+                <span class="step-label">DEPOIS DE 30 DIAS</span>
+                <h2>Como funciona a possibilidade de ampliação gratuita</h2>
+                <p>Após 30 dias e contato da equipe SIGFILA, existe a possibilidade de ampliar gratuitamente a configuração para 3 serviços, 3 guichês e 3 operadores. O limite continua sendo 1 totem e 1 display.</p>
+                <table class="comparison">
+                    <thead><tr><th>Recurso</th><th>Cadastro inicial</th><th>Possível ampliação gratuita</th></tr></thead>
+                    <tbody>
+                        <tr><td>Serviços</td><td>1</td><td>Até 3</td></tr>
+                        <tr><td>Guichês</td><td>1</td><td>Até 3</td></tr>
+                        <tr><td>Operadores</td><td>1</td><td>Até 3</td></tr>
+                        <tr><td>Totem</td><td>1</td><td>Permanece 1</td></tr>
+                        <tr><td>Display</td><td>1</td><td>Permanece 1</td></tr>
+                    </tbody>
+                </table>
+                <p>Enquanto o contato não acontece, você pode continuar usando o sistema gratuitamente nos limites iniciais. A operação não precisa parar ao completar 30 dias.</p>
+            </article>
+
+            <article class="guide-section">
+                <span class="step-label">MÓDULOS ADICIONAIS</span>
+                <h2>Quando consultar recursos além do fluxo básico</h2>
+                <p>Depois que a emissão e a chamada de senhas estiverem organizadas, outras necessidades podem aparecer. Esses recursos não fazem parte do cadastro gratuito e são oferecidos sob consulta.</p>
+                <ul>
+                    <li><strong>Cidadão:</strong> para experiências e interações adicionais voltadas ao público atendido.</li>
+                    <li><strong>Previsão de fila:</strong> para operações que desejam oferecer estimativas e mais previsibilidade ao cidadão.</li>
+                    <li><strong>Relatórios:</strong> para gestores que precisam acompanhar indicadores e analisar o atendimento.</li>
+                    <li><strong>Multissecretaria:</strong> para estruturas que precisam organizar mais de uma secretaria ou operação administrativa.</li>
+                </ul>
+                <p>Antes de consultar um módulo, registre qual problema precisa ser resolvido, quem usará o recurso e qual decisão dependerá dele. Isso torna a conversa mais objetiva e evita contratar funcionalidades sem uma aplicação definida.</p>
+            </article>
+
+            <article class="guide-section">
+                <span class="step-label">ERROS COMUNS</span>
+                <h2>O que evitar na primeira implantação</h2>
+                <ol>
+                    <li><strong>Começar com um fluxo complexo:</strong> muitos caminhos dificultam o treinamento e escondem a origem dos problemas.</li>
+                    <li><strong>Usar nomes internos:</strong> o cidadão precisa reconhecer o serviço sem conhecer a estrutura do órgão.</li>
+                    <li><strong>Pular o teste completo:</strong> emitir, chamar e visualizar uma senha antes da abertura reduz imprevistos.</li>
+                    <li><strong>Deixar a equipe sem referência:</strong> defina uma pessoa para acompanhar dúvidas no primeiro dia.</li>
+                    <li><strong>Confundir módulos adicionais com o gratuito:</strong> planeje Cidadão, previsão de fila, relatórios e multissecretaria separadamente.</li>
+                </ol>
+            </article>
+
+            <article class="guide-section" id="perguntas">
+                <span class="step-label">PERGUNTAS FREQUENTES</span>
+                <h2>Dúvidas sobre o SIGFILA gratuito</h2>
+                <div class="faq-item"><h3>O uso continua gratuito enquanto aguardo o contato?</h3><p>Sim. Você continua usando gratuitamente 1 serviço, 1 guichê, 1 operador, 1 totem e 1 display.</p></div>
+                <div class="faq-item"><h3>A ampliação acontece automaticamente após 30 dias?</h3><p>Não. Após 30 dias e contato da equipe, há possibilidade de ampliação gratuita para 3 serviços, 3 guichês e 3 operadores. Totem e display permanecem limitados a uma unidade cada.</p></div>
+                <div class="faq-item"><h3>Relatórios estão incluídos?</h3><p>Não. Relatórios são um módulo adicional sob consulta, assim como Cidadão, previsão de fila e multissecretaria.</p></div>
+                <div class="faq-item"><h3>Preciso esperar 30 dias para começar?</h3><p>Não. O cadastro inicial pode ser usado gratuitamente dentro dos limites apresentados desde o início.</p></div>
+            </article>
+
+            <article class="guide-section">
+                <span class="step-label">PRÓXIMO PASSO</span>
+                <h2>Cadastre sua primeira operação</h2>
+                <p>Escolha um serviço, um guichê e um operador. Prepare o totem e o display, faça um teste completo e comece com um fluxo que toda a equipe consiga acompanhar.</p>
+                <div class="cta-actions">
+                    <a href="https://gratuito.sigfila.com.br/free" class="btn-primary">Começar gratuitamente</a>
+                    <a href="/planos/" class="btn-secondary">Ver limites e módulos</a>
+                    <a href="/blog/" class="btn-secondary">Voltar ao blog</a>
+                </div>
+                <p class="article-source">Informações sobre limites e ampliação verificadas na oferta oficial do SIGFILA em 15 de setembro de 2026.</p>
+            </article>
         </div>
     </section>
 </main>

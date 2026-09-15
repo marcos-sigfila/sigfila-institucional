@@ -2,147 +2,153 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sigfila.com.br/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/sistema-de-filas/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/como-funciona/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/lgpd/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/indicadores/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/diagnostico/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/piloto/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/planos/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/blog/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/como-reduzir-filas/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/lgpd-prefeituras/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/para-prefeitos/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/para-secretarios/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/para-atendimento/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/blog/reduzir-filas-orgaos-publicos/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/blog/fila-digital-prefeitura/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/blog/lgpd-na-pratica-prefeituras/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/blog/indicadores-atendimento-publico/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/blog/medir-tempo-espera-atendimento-publico/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/blog/transparencia-atendimento-publico-dados/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/blog/atendimento-publico-qr-code/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/blog/pressao-politica-filas-dados/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/blog/filas-sus-municipal/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sigfila.com.br/blog/rastreabilidade-dados-atendimento/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sigfila.com.br/blog/implantar-sistema-de-senhas-gratuito/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
 

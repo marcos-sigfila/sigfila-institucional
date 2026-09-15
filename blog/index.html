@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGFILA Blog | Gestão de Filas no Setor Público</title>
     <meta name="description" content="Conteúdos sobre gestão de filas, atendimento público e LGPD para prefeituras.">
+    <link rel="canonical" href="https://sigfila.com.br/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="SIGFILA Blog | Gestão de Filas no Setor Público">
+    <meta property="og:description" content="Guias práticos sobre gestão de filas, atendimento público, LGPD e implantação do SIGFILA.">
+    <meta property="og:url" content="https://sigfila.com.br/blog/">
+    <meta property="og:image" content="https://sigfila.com.br/logo.png">
     <link rel="icon" type="image/x-icon" href="/sigfila.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1522,7 +1529,7 @@
                 scroll-behavior: auto !important;
             }
         }
-    
+
             .cta-section .btn-secondary,
         .tech-stack .btn-secondary,
         .whats-new .btn-secondary {
@@ -1574,6 +1581,9 @@
             .badge-dot { flex-shrink: 0; }
             .stat-value { overflow-wrap: anywhere; }
         }
+
+        .featured-post { border-color: rgba(0, 174, 239, .55); box-shadow: 0 18px 40px rgba(0, 174, 239, .16); }
+        .featured-post .feature-tag { background: #DCFCE7; color: #166534; }
     </style>
 </head>
 <body id="top">
@@ -1622,7 +1632,7 @@
             </p>
             <div class="hero-ctas">
                 <a href="#guias" class="btn-primary">Ver guias estratégicos <span>→</span></a>
-                <a href="/contato/" class="btn-secondary">Falar com o fundador <span>→</span></a>
+                <a href="https://gratuito.sigfila.com.br/free" class="btn-secondary">Começar gratuitamente <span>→</span></a>
             </div>
         </div>
         <div class="hero-visual">
@@ -1666,24 +1676,24 @@
 
             <div class="features-grid">
                 <div class="feature-card fade-in-up">
-                    <span class="feature-emoji">??</span>
+                    <span class="feature-emoji" aria-hidden="true">✓</span>
                     <h3 class="feature-name">Como reduzir filas</h3>
                     <p class="feature-text">Estratégias para distribuir a demanda e reduzir tempo de espera.</p>
                     <a href="/como-reduzir-filas" class="btn-secondary">Ler guia</a>
                 </div>
 
                 <div class="feature-card fade-in-up">
-                    <span class="feature-emoji">??</span>
+                    <span class="feature-emoji" aria-hidden="true">✓</span>
                     <h3 class="feature-name">LGPD para prefeituras</h3>
                     <p class="feature-text">Checklist prático para conformidade no atendimento público, com uso responsável do CPF.</p>
                     <a href="/lgpd-prefeituras" class="btn-secondary">Ver checklist</a>
                 </div>
 
                 <div class="feature-card fade-in-up">
-                    <span class="feature-emoji">??</span>
+                    <span class="feature-emoji" aria-hidden="true">✓</span>
                     <h3 class="feature-name">Gestão em tempo real</h3>
                     <p class="feature-text">Indicadores que mostram onde agir antes que vire crise.</p>
-                    <a href="/contato/" class="btn-secondary">Solicitar demonstração</a>
+                    <a href="/planos/" class="btn-secondary">Ver módulos adicionais</a>
                 </div>
             </div>
         </div>
@@ -1693,13 +1703,25 @@
         <div class="container">
             <div class="section-header fade-in-up">
                 <div class="section-tag">● POSTS DO BLOG</div>
-                <h2 class="section-title">10 conteúdos prontos para gerar demanda</h2>
+                <h2 class="section-title">Guias práticos para melhorar o atendimento</h2>
                 <p class="section-description">
-                    Títulos e conteúdos iniciais para posicionar o SIGFILA como referência em atendimento público.
+                    Conteúdos para organizar filas, melhorar a rotina das equipes e tomar decisões com mais clareza.
                 </p>
             </div>
 
             <div class="new-features-grid">
+
+                <article class="new-feature-card fade-in-up featured-post">
+                    <span class="feature-tag">Guia de implantação</span>
+                    <h3 class="feature-title">Como implantar um sistema de senhas gratuito: guia passo a passo</h3>
+                    <p class="feature-description">Da configuração inicial ao primeiro dia de atendimento: veja como começar com uma operação simples e organizada.</p>
+                    <ul class="post-points">
+                        <li>Configuração gratuita inicial</li>
+                        <li>Checklist para o primeiro atendimento</li>
+                        <li>Ampliação e módulos adicionais explicados</li>
+                    </ul>
+                    <a href="/blog/implantar-sistema-de-senhas-gratuito/" class="btn-secondary">Ler guia completo</a>
+                </article>
                 <article class="new-feature-card fade-in-up">
                     <span class="feature-tag">Filas</span>
                     <h3 class="feature-title">Como reduzir filas em órgãos públicos: estratégias que funcionam</h3>
@@ -1710,124 +1732,114 @@
                         <li>Comunicação com o cidadão em tempo real</li>
                     </ul>
                     <a href="/blog/reduzir-filas-orgaos-publicos/" class="btn-secondary">Ler artigo</a>
-                    <div class="post-keywords">Keywords: sistema de filas para prefeitura; reduzir filas atendimento público; gestão de atendimento público</div>
                 </article>
 
                 <article class="new-feature-card fade-in-up">
                     <span class="feature-tag">Digital</span>
                     <h3 class="feature-title">Fila digital na prefeitura: o que é e por que funciona</h3>
-                    <p class="feature-description">Explique o modelo híbrido e como a fila digital reduz conflitos e aglomerações.</p>
+                    <p class="feature-description">Entenda o modelo híbrido e como a fila digital ajuda a reduzir conflitos e aglomerações.</p>
                     <ul class="post-points">
                         <li>Fila física + online no mesmo fluxo</li>
                         <li>Acompanhamento remoto por QR Code</li>
                         <li>Menos pressão no balcão</li>
                     </ul>
                     <a href="/blog/fila-digital-prefeitura/" class="btn-secondary">Ler artigo</a>
-                    <div class="post-keywords">Keywords: fila digital prefeitura; fila online prefeitura; atendimento digital setor público</div>
                 </article>
 
                 <article class="new-feature-card fade-in-up">
                     <span class="feature-tag">LGPD</span>
                     <h3 class="feature-title">LGPD na prática para prefeituras: o que muda no atendimento</h3>
-                    <p class="feature-description">Mostre como adequar coleta, tratamento e acesso aos dados do cidadão.</p>
+                    <p class="feature-description">Veja como organizar a coleta, o tratamento e o acesso aos dados do cidadão.</p>
                     <ul class="post-points">
                         <li>Base legal e finalidade explícita</li>
                         <li>Consentimento quando necessário</li>
                         <li>Rastreabilidade de acessos</li>
                     </ul>
                     <a href="/blog/lgpd-na-pratica-prefeituras/" class="btn-secondary">Ler artigo</a>
-                    <div class="post-keywords">Keywords: LGPD atendimento público; LGPD prefeituras; dados pessoais no serviço público</div>
                 </article>
 
                 <article class="new-feature-card fade-in-up">
                     <span class="feature-tag">Indicadores</span>
                     <h3 class="feature-title">Indicadores que todo gestor público precisa acompanhar no atendimento</h3>
-                    <p class="feature-description">Painel executivo com métricas que revelam onde agir antes da crise.</p>
+                    <p class="feature-description">Conheça métricas que ajudam a revelar onde agir antes que a fila vire uma crise.</p>
                     <ul class="post-points">
                         <li>Tempo médio por serviço</li>
                         <li>SLA e metas por unidade</li>
                         <li>Ranking de desempenho</li>
                     </ul>
                     <a href="/blog/indicadores-atendimento-publico/" class="btn-secondary">Ler artigo</a>
-                    <div class="post-keywords">Keywords: indicadores atendimento público; tempo médio de espera; relatório por secretaria</div>
                 </article>
 
                 <article class="new-feature-card fade-in-up">
                     <span class="feature-tag">Métricas</span>
                     <h3 class="feature-title">Como medir tempo de espera e tempo de atendimento no setor público</h3>
-                    <p class="feature-description">Defina métricas corretas e padronize a coleta para comparar unidades.</p>
+                    <p class="feature-description">Aprenda a definir métricas e padronizar a coleta para comparar períodos e unidades.</p>
                     <ul class="post-points">
                         <li>Diferença entre espera e atendimento</li>
                         <li>Coleta por etapa e por serviço</li>
                         <li>Metas realistas e comparáveis</li>
                     </ul>
                     <a href="/blog/medir-tempo-espera-atendimento-publico/" class="btn-secondary">Ler artigo</a>
-                    <div class="post-keywords">Keywords: tempo médio de espera; métricas atendimento público; desempenho atendimento</div>
                 </article>
 
                 <article class="new-feature-card fade-in-up">
                     <span class="feature-tag">Transparência</span>
                     <h3 class="feature-title">Transparência no atendimento: como usar dados para prestar contas ao cidadão</h3>
-                    <p class="feature-description">Transforme relatórios em comunicação pública e confiança na gestão.</p>
+                    <p class="feature-description">Use dados de atendimento para comunicar resultados e prestar contas com clareza.</p>
                     <ul class="post-points">
                         <li>Painéis públicos com indicadores claros</li>
                         <li>Comparativos mensais de evolução</li>
                         <li>Prestação de contas com dados reais</li>
                     </ul>
                     <a href="/blog/transparencia-atendimento-publico-dados/" class="btn-secondary">Ler artigo</a>
-                    <div class="post-keywords">Keywords: transparência atendimento público; dados de atendimento; prestação de contas prefeitura</div>
                 </article>
 
                 <article class="new-feature-card fade-in-up">
                     <span class="feature-tag">Operação</span>
                     <h3 class="feature-title">Atendimento público com QR Code: benefícios e uso real</h3>
-                    <p class="feature-description">Mostre o fluxo completo e como o QR Code melhora a experiência.</p>
+                    <p class="feature-description">Conheça o fluxo com QR Code e os cuidados para melhorar a experiência do cidadão.</p>
                     <ul class="post-points">
                         <li>Check-in rápido e organizado</li>
                         <li>Acompanhamento da fila pelo celular</li>
                         <li>Menos conflito no balcão</li>
                     </ul>
                     <a href="/blog/atendimento-publico-qr-code/" class="btn-secondary">Ler artigo</a>
-                    <div class="post-keywords">Keywords: QR Code atendimento público; fila por celular; acompanhamento de fila</div>
                 </article>
 
                 <article class="new-feature-card fade-in-up">
                     <span class="feature-tag">Gestão</span>
                     <h3 class="feature-title">Pressão política por filas: como reduzir reclamações com dados</h3>
-                    <p class="feature-description">Explique como dados reduzem reclamações e protegem a imagem da gestão.</p>
+                    <p class="feature-description">Veja como dados confiáveis ajudam a responder reclamações e orientar decisões.</p>
                     <ul class="post-points">
                         <li>Queda de reclamações e ruído político</li>
                         <li>Comunicação baseada em indicadores</li>
                         <li>Relatórios para tomada de decisão</li>
                     </ul>
                     <a href="/blog/pressao-politica-filas-dados/" class="btn-secondary">Ler artigo</a>
-                    <div class="post-keywords">Keywords: reclamações atendimento público; gestão de filas prefeitura; pressão política filas</div>
                 </article>
 
                 <article class="new-feature-card fade-in-up">
                     <span class="feature-tag">Saúde</span>
                     <h3 class="feature-title">Gestão de filas nas unidades básicas de saúde: como organizar e reduzir tempo de espera</h3>
-                    <p class="feature-description">Aplicação prática em unidades de saúde com triagem e prioridades.</p>
+                    <p class="feature-description">Boas práticas para organizar triagem, prioridades e picos nas unidades de saúde.</p>
                     <ul class="post-points">
                         <li>Prioridades por risco e serviço</li>
                         <li>Integração com agenda da unidade</li>
                         <li>Controle de picos e previsibilidade</li>
                     </ul>
                     <a href="/blog/filas-sus-municipal/" class="btn-secondary">Ler artigo</a>
-                    <div class="post-keywords">Keywords: filas SUS municipal; gestão de atendimento saúde pública; tempo de espera SUS</div>
                 </article>
 
                 <article class="new-feature-card fade-in-up">
                     <span class="feature-tag">Auditoria</span>
                     <h3 class="feature-title">Rastreabilidade de dados no atendimento: quem acessou, quando e por quê</h3>
-                    <p class="feature-description">Mostre como logs ajudam a auditoria e a governança da LGPD.</p>
+                    <p class="feature-description">Entenda como registros de acesso apoiam auditoria, segurança e governança de dados.</p>
                     <ul class="post-points">
                         <li>Histórico completo de acessos</li>
                         <li>Justificativas e perfis de usuário</li>
                         <li>Governança e segurança da informação</li>
                     </ul>
                     <a href="/blog/rastreabilidade-dados-atendimento/" class="btn-secondary">Ler artigo</a>
-                    <div class="post-keywords">Keywords: rastreabilidade LGPD; auditoria de acesso; controle de dados atendimento</div>
                 </article>
             </div>
         </div>
@@ -1862,26 +1874,12 @@
 
 <section class="cta-section" id="contato">
     <div class="cta-content fade-in-up">
-        <h2>Vamos transformar o atendimento<br>da sua prefeitura</h2>
-        <p>Solicite uma demonstração e receba um diagnóstico gratuito com o fundador do SIGFILA.</p>
-        <form class="cta-form" onsubmit="return handleSubmit(event)">
-            <label class="sr-only" for="cta-name">Nome</label>
-            <input id="cta-name" name="name" type="text" class="cta-input" placeholder="Seu nome" autocomplete="name" required>
-            <label class="sr-only" for="cta-email">E-mail</label>
-            <input id="cta-email" name="email" type="email" class="cta-input" placeholder="seu-email@prefeitura.gov.br" autocomplete="email" required>
-            <label class="sr-only" for="cta-phone">Telefone</label>
-            <input id="cta-phone" name="phone" type="tel" class="cta-input" placeholder="Telefone/WhatsApp" autocomplete="tel" required>
-            <label class="sr-only" for="cta-city">Município</label>
-            <input id="cta-city" name="city" type="text" class="cta-input" placeholder="Município" autocomplete="address-level2" required>
-            <label class="sr-only" for="cta-message">Mensagem</label>
-            <textarea id="cta-message" name="message" class="cta-input cta-textarea full" placeholder="Conte um pouco sobre o desafio da sua prefeitura" required></textarea>
-            <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <div class="cta-actions full">
-                <button type="submit" class="cta-button">Solicitar demonstração</button>
-                <a href="/contato/" class="cta-link">Falar com o fundador</a>
-            </div>
-        </form>
-        <div class="form-message" role="status" aria-live="polite"></div>
+        <h2>Comece a organizar seu atendimento<br>com o SIGFILA</h2>
+        <p>O cadastro gratuito inclui 1 serviço, 1 guichê, 1 operador, 1 totem e 1 display. Você pode avaliar módulos adicionais quando a operação precisar crescer.</p>
+        <div class="cta-actions">
+            <a href="https://gratuito.sigfila.com.br/free" class="cta-button">Começar gratuitamente</a>
+            <a href="/planos/" class="cta-link">Consultar módulos adicionais</a>
+        </div>
     </div>
 </section>
 </main>
@@ -2063,7 +2061,7 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             const currentScroll = window.pageYOffset;
-            
+
             if (currentScroll > 100) {
                 header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
             } else {
@@ -2105,7 +2103,7 @@
                 link.addEventListener('click', closeNav);
             });
         }
-    
+
 </script>
 </body>
 </html>
