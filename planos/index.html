@@ -50,11 +50,17 @@
         }
 
         .brand {
-            font-family: "Epilogue", Arial, sans-serif;
-            font-weight: 800;
-            letter-spacing: 0.03em;
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
             text-decoration: none;
-            font-size: 1.35rem;
+        }
+
+        .brand-logo {
+            display: block;
+            width: 250px;
+            max-width: 100%;
+            height: auto;
         }
 
         .nav-links {
@@ -278,13 +284,16 @@
             .plans, .steps { grid-template-columns: 1fr; }
             .hero { padding-top: 46px; }
             .footer-inner { flex-direction: column; }
+            .brand-logo { width: 210px; }
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="nav" aria-label="Navegação principal">
-            <a class="brand" href="/">SIGFILA</a>
+            <a class="brand" href="/" aria-label="Voltar para a página inicial">
+                <img class="brand-logo" src="/logo.png" alt="SIGFILA" width="250" height="58">
+            </a>
             <div class="nav-links">
                 <a href="/">Início</a>
                 <a href="/piloto/">Começar</a>

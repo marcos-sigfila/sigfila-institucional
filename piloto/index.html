@@ -42,10 +42,16 @@
             gap: 1rem;
         }
         .brand {
-            color: var(--cyan-dark);
-            font-weight: 800;
-            font-size: 1.35rem;
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
             text-decoration: none;
+        }
+        .brand-logo {
+            display: block;
+            width: 250px;
+            max-width: 100%;
+            height: auto;
         }
         .nav-links {
             display: flex;
@@ -200,13 +206,16 @@
         @media (max-width: 820px) {
             .hero-grid { grid-template-columns: 1fr; }
             nav { align-items: flex-start; flex-direction: column; }
+            .brand-logo { width: 210px; }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <a class="brand" href="/">SIGFILA</a>
+            <a class="brand" href="/" aria-label="Voltar para a página inicial">
+                <img class="brand-logo" src="/logo.png" alt="SIGFILA" width="250" height="58">
+            </a>
             <div class="nav-links">
                 <a href="/">Início</a>
                 <a href="/diagnostico/">Diagnóstico gratuito</a>
