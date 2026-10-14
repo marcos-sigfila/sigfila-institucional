@@ -24,6 +24,26 @@
     @media(max-width:700px){.container{padding:0 20px}html{scroll-padding-top:90px}nav{min-height:78px;gap:12px}.logo{width:205px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:78px;left:0;right:0;flex-direction:column;align-items:stretch;background:white;border-bottom:1px solid var(--border);padding:20px;gap:16px}.nav-links.open{display:flex}.nav-links>a:not(.btn){display:block}.hero{padding:48px 0}.hero-grid,.paths,.free-grid,.enterprise-intro,.use-cases,.faq-wrap{grid-template-columns:1fr;gap:26px}h1{font-size:38px}.hero-copy{font-size:18px}.hero .actions .btn{width:100%}.hero-note{font-size:12px}.visual{padding:22px}.audiences .container{font-size:13px;justify-content:flex-start;gap:12px 20px}.audiences strong{width:100%}section.block{padding:52px 0}.path{padding:25px}.path h3{font-size:26px}.enterprise-note{padding:20px}.modules{grid-template-columns:1fr 1fr;gap:12px}.module{padding:19px}.module h3{font-size:17px}.module p{font-size:14px}.closing{padding:29px}.closing h2{font-size:28px}.closing .btn{width:100%}footer .container{flex-direction:column;gap:12px}}
     @media(max-width:360px){.logo{width:175px}.modules{grid-template-columns:1fr}h1{font-size:33px}.flow-icon{width:48px;height:48px}.btn{font-size:15px;padding:14px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+    nav { gap: 18px; }
+    .nav-links { margin-left: auto; gap: 18px; }
+    .account-link { flex-shrink: 0; color: var(--cyan-dark); font: 600 14px 'Outfit', sans-serif; text-decoration: none; padding: 10px 0; }
+    .account-link:hover { text-decoration: underline; }
+    .guide-link { display: inline-block; margin-top: 12px; color: var(--cyan-dark); font: 600 14px/1.6 'Outfit', sans-serif; }
+    .quick-start { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; list-style: none; padding: 0; margin: 0; }
+    .quick-start li { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+    .quick-number { display: grid; place-items: center; width: 36px; height: 36px; background: var(--cyan-light); color: var(--cyan-dark); border-radius: 10px; font: 700 17px 'Outfit', sans-serif; margin-bottom: 18px; }
+    .quick-start h3 { font-size: 19px; margin-bottom: 12px; }
+    .quick-start p { font: 400 15px/1.7 'Outfit', sans-serif; }
+    .quick-start a { color: var(--cyan-dark); font-weight: 600; }
+    @media (max-width: 1000px) { .quick-start { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 700px) {
+      html { scroll-padding-top: 125px; }
+      nav { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 12px; padding-top: 12px !important; }
+      .menu-toggle { grid-column: 2; grid-row: 1; }
+      .account-link { grid-column: 1 / -1; grid-row: 2; justify-self: end; padding: 6px 0 12px; }
+      .nav-links { top: 100%; margin-left: 0; }
+    }
+    @media (max-width: 450px) { .quick-start { grid-template-columns: 1fr; } }
   </style>
 <script type="application/ld+json">
 {
@@ -45,6 +65,7 @@
         <a href="#gratuito">Gratuito</a><a href="#organizacoes">Prefeituras e empresas</a><a href="#modulos">Módulos</a><a href="/blog/">Blog</a>
         <a class="btn btn-primary" href="https://gratuito.sigfila.com.br/free">Usar gratuitamente <span aria-hidden="true">↗</span></a>
       </div>
+      <a class="account-link" href="https://gratuito.sigfila.com.br/login">Já tenho conta</a>
     </nav>
   </header>
   <main id="inicio">
@@ -56,6 +77,7 @@
           <p class="hero-copy">Emissão e chamada de senhas gratuitas para sempre. Para prefeituras e empresas com vários setores, conheça uma plataforma com módulos para acompanhar o público e apoiar a gestão.</p>
           <div class="actions"><a class="btn btn-primary" href="https://gratuito.sigfila.com.br/free">Usar gratuitamente <span aria-hidden="true">↗</span></a><a class="btn" href="#organizacoes">Conhecer a solução completa <span aria-hidden="true">↓</span></a></div>
           <p class="hero-note"><strong>Gratuito para sempre, dentro dos limites da modalidade.</strong> Você só paga se optar pelos módulos adicionais. Cadastro com 1 serviço, 1 guichê, 1 operador, 1 totem e 1 display.</p>
+          <a class="guide-link" href="#primeira-senha">Veja como imprimir sua primeira senha <span aria-hidden="true">↓</span></a>
         </div>
         <div class="visual">
           <div class="visual-top"><strong>Qual é a sua necessidade?</strong><span class="pill">SIGFILA</span></div>
@@ -90,6 +112,19 @@
       <div class="container free-grid">
         <div><div class="eyebrow">Comece pelo essencial</div><h2 id="free-title">Emita senhas.<br>Chame no guichê.<br>Organize o atendimento.</h2><p>O SIGFILA gratuito atende quem quer um gerenciador de fila para o dia a dia, sem prazo para terminar. O uso básico é gratuito por tempo indeterminado, dentro dos limites da modalidade. Você só paga se optar por contratar módulos adicionais.</p><div class="limits" aria-label="Limites iniciais"><span><b>1</b> serviço</span><span><b>1</b> guichê</span><span><b>1</b> operador</span><span><b>1</b> totem</span><span><b>1</b> display</span></div><a class="btn btn-primary" href="https://gratuito.sigfila.com.br/free">Usar gratuitamente <span aria-hidden="true">↗</span></a><p class="hero-note">Cidadão, previsão de fila, relatórios e multissecretaria são módulos adicionais sob consulta e não estão incluídos no gratuito.</p></div>
         <div class="timeline" aria-label="Etapas do uso gratuito"><div class="timeline-step"><h3>1. Cadastro gratuito</h3><p>Comece com 1 serviço, 1 guichê, 1 operador, 1 totem e 1 display.</p></div><div class="timeline-step"><h3>2. Use na sua rotina</h3><p>Emita senhas, realize as chamadas e acompanhe como o fluxo funciona na sua operação.</p></div><div class="timeline-step"><h3>3. Possibilidade de ampliação</h3><p>Após 30 dias e contato da equipe, há possibilidade de ampliação gratuita para 3 serviços, 3 guichês e 3 operadores, mantendo 1 totem e 1 display.</p></div><div class="timeline-step"><h3>Enquanto aguarda o contato</h3><p>O uso é gratuito por tempo indeterminado. Enquanto aguarda o contato, os limites iniciais permanecem. Os 30 dias se referem à possibilidade de ampliação, e não ao fim da gratuidade.</p></div></div>
+      </div>
+    </section>
+    <section class="block" id="primeira-senha" aria-labelledby="first-ticket-title">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Guia rápido do gratuito</div><h2 id="first-ticket-title">Da conta criada à primeira senha impressa.</h2><p>Quatro passos para colocar seu atendimento em funcionamento.</p></div>
+        <ol class="quick-start">
+          <li><span class="quick-number" aria-hidden="true">1</span><h3>Crie e confirme sua conta</h3><p>Faça o cadastro gratuito e confirme o e-mail recebido. Se já se cadastrou, acesse <a href="https://gratuito.sigfila.com.br/login">Já tenho conta</a>.</p></li>
+          <li><span class="quick-number" aria-hidden="true">2</span><h3>Confira a configuração</h3><p>O serviço, o guichê e os demais recursos iniciais são criados automaticamente. Confira os nomes e conecte a impressora ao equipamento do totem.</p></li>
+          <li><span class="quick-number" aria-hidden="true">3</span><h3>Emita e imprima a senha</h3><p>No painel da sua conta, clique em <strong>“Abrir totem”</strong>. Escolha o serviço e o tipo de atendimento. Na janela de impressão do navegador, selecione a impressora e confirme.</p></li>
+          <li><span class="quick-number" aria-hidden="true">4</span><h3>Teste a chamada</h3><p>Use <strong>“Abrir display”</strong> na tela de chamadas. Na seção <strong>“Atender”</strong>, selecione o guichê e chame a senha emitida para conferir o fluxo completo.</p></li>
+        </ol>
+        <p class="hero-note">A impressora precisa estar instalada e funcionar no equipamento usado para abrir o totem. A impressão é feita pelo navegador; os equipamentos são fornecidos pela sua instituição.</p>
+        <div class="actions"><a class="btn btn-primary" href="https://gratuito.sigfila.com.br/free">Usar gratuitamente <span aria-hidden="true">↗</span></a><a class="btn" href="https://gratuito.sigfila.com.br/login">Já tenho conta <span aria-hidden="true">↗</span></a><a class="guide-link" href="/blog/implantar-sistema-de-senhas-gratuito/">Ver o guia completo</a></div>
       </div>
     </section>
     <section class="block" id="organizacoes" aria-labelledby="org-title">
