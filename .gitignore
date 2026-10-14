@@ -1,1 +1,5 @@
 ofertaPrefeituraPiloto.html
+
+# Local review artifacts and temporary deployment credentials
+previa/
+.deploy-temp/
