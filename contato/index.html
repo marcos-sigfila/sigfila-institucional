@@ -1689,8 +1689,10 @@
                 <input id="cta-email" name="email" type="email" class="cta-input" placeholder="Seu email" autocomplete="email" required>
                 <label class="sr-only" for="cta-phone">Telefone</label>
                 <input id="cta-phone" name="phone" type="tel" class="cta-input" placeholder="Seu telefone" autocomplete="tel" required>
-                <label class="sr-only" for="cta-city">Cidade/Prefeitura</label>
-                <input id="cta-city" name="city" type="text" class="cta-input" placeholder="Cidade ou prefeitura" autocomplete="organization" required>
+                <label class="sr-only" for="cta-organization">Empresa ou instituição (opcional)</label>
+                <input id="cta-organization" name="organization" type="text" class="cta-input" placeholder="Empresa ou instituição (opcional)" autocomplete="organization" maxlength="150">
+                <label class="sr-only" for="cta-city">Cidade</label>
+                <input id="cta-city" name="city" type="text" class="cta-input" placeholder="Cidade" autocomplete="address-level2" required>
                 <label class="sr-only" for="cta-message">Mensagem</label>
                 <textarea id="cta-message" name="message" class="cta-input cta-textarea full" placeholder="Conte o que você precisa" rows="4"></textarea>
                 <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off">
@@ -1796,6 +1798,7 @@
             const name = form.querySelector('input[name="name"]').value.trim();
             const email = form.querySelector('input[name="email"]').value.trim();
             const phone = form.querySelector('input[name="phone"]').value.trim();
+            const organization = form.querySelector('input[name="organization"]')?.value.trim() || '';
             const city = form.querySelector('input[name="city"]').value.trim();
             const messageText = form.querySelector('textarea[name="message"]').value.trim();
             const honeypot = form.querySelector('input[name="company"]');
@@ -1826,6 +1829,8 @@
                     telefone: phone,
                     city,
                     cidade: city,
+                    organization,
+                    orgaoInstituicao: organization,
                     cidadePrefeitura: city,
                     prefeitura: city,
                     message: messageText,
@@ -1848,7 +1853,7 @@
                     dataEnvio: submittedAt.toISOString(),
                     dataLocal: submittedAt.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
                     formId: form.id || 'cta-form',
-                    leadResumo: `Nome: ${name} | Email: ${email} | Telefone: ${phone} | Cidade/Prefeitura: ${city} | Mensagem: ${messageText}`
+                    leadResumo: `Nome: ${name} | Email: ${email} | Telefone: ${phone} | Empresa/instituição: ${organization || 'Não informada'} | Cidade: ${city} | Mensagem: ${messageText}`
                 };
 
                 const res = await fetch(SHEETS_WEBAPP_URL, {
